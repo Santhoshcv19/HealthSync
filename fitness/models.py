@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class MacroNutrients(models.Model):
+    food_name = models.CharField(max_length=100)
+    carbohydrates = models.CharField(max_length=100)
+    protein = models.CharField(max_length=100)
+    fats = models.CharField(max_length=100)

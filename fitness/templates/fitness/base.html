@@ -24,6 +24,9 @@
         #About, #About1{
           background-color: black;
         }
+        .login:hover{
+            color: white;
+        }
     </style>
 </head>
 <body style="background-color: black; color: white;">
@@ -39,21 +42,33 @@
                 <img src="{% static "fitness/ahsan1.png" %}" height="75" class="d-inline-block align-top" alt="Logo Here">
             </a>
             </div>
+            <div>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="login">Log Out</a>
+                {% else %}
+                <a href="{% url 'login' %}" class="login">Login</a>&nbsp;&nbsp;
+                {% endif %}
+                {% if user.is_authenticated == False %}
+                <a href="{% url 'signup' %}"><button type="button" class="btn btn-outline-primary btn-sm button">Signup</button></a>
+                {% endif %}
+            </div>
     </nav>
     <div class="container toggle-menu">
         <div class="collapse navbar-collapse" id="navbarNavLeft" style="background-color: black;">
             <ul class="list-group">
                 <li class="list-group-item" style="background-color: black;"><a href="#About" style="color: white;">About</a></li>
                 <li class="list-group-item" style="background-color: black;"><a href="#Contact" style="color: white;">Contact</a></li>
-                <li class="list-group-item" style="background-color: black;"><a href="#Supplements" style="color: white;">Supplements</a></li>
-                <li class="list-group-item" style="background-color: black;"><a href="#Nutrition" style="color: white;">Nutrition Tracking</a></li>
-                <li class="list-group-item" style="background-color: black;"><a href="#Body" style="color: white;">Body Fat Percentage Calculation</a></li>
-                <li class="list-group-item" style="background-color: black;"><a href="#Logging" style="color: white;">Workout Logging</a></li>
-                <li class="list-group-item" style="background-color: black;"><a href="#Tips" style="color: white;">Workout Tips</a></li>
-                <li class="list-group-item" style="background-color: black;"><a href="#Mental" style="color: white;">Mental Health Tracking</a></li>
-                <li class="list-group-item" style="background-color: black;"><a href="#Trainers" style="color: white;">Certified Trainers</a></li>
-                <li class="list-group-item" style="background-color: black;"><a href="#Gym" style="color: white;">Gym Locator</a></li>
-                <li class="list-group-item" style="background-color: black;"><a href="#Trainers" style="color: white;">Trainers Page</a></li>
+                {% if user.is_authenticated %}
+                <li class="list-group-item" style="background-color: black;"><a href="{% url 'supplement' %}" style="color: white;">Supplements</a></li>
+                <li class="list-group-item" style="background-color: black;"><a href="{% url 'nutrient' %}" style="color: white;">Nutrition Tracking</a></li>
+                <li class="list-group-item" style="background-color: black;"><a href="{% url 'bodyfat' %}" style="color: white;">Body Fat Percentage Calculation</a></li>
+                <li class="list-group-item" style="background-color: black;"><a href="{% url 'workoutlogging' %}" style="color: white;">Workout Logging</a></li>
+                <li class="list-group-item" style="background-color: black;"><a href="{% url 'tips' %}" style="color: white;">Workout Tips</a></li>
+                <li class="list-group-item" style="background-color: black;"><a href="{% url 'mental' %}" style="color: white;">Mental Health Tracking</a></li>
+                <li class="list-group-item" style="background-color: black;"><a href="{% url 'ctrainer' %}" style="color: white;">Certified Trainers</a></li>
+                <li class="list-group-item" style="background-color: black;"><a href="{% url 'location' %}" style="color: white;">Gym Locator</a></li>
+                <li class="list-group-item" style="background-color: black;"><a href="#Trainer" style="color: white;">Trainers Page</a></li>
+                {% endif %}
                 <!-- Add more menu items for your functionalities here -->
             </ul>
         </div>

@@ -4,6 +4,135 @@
 
 {% block content %}
 
-hello
+<div class="container">
+    <br>
+    <h1 style="color: white; text-align: center;">Worried about which splits to go for? We got you!!</h1>
+    <br>
+    <br>
+    <h2 style="color: white;">How many days will you be working out in a week?</h2>
+    <label for="days">Select the number of days:</label> 
+    <form method="post">
+        {% csrf_token %}
+        <select name="days" id="days" onchange="this.form.submit()"> 
+            <option value="select">Select</option>
+            <option value="one">1</option> 
+            <option value="two">2</option> 
+            <option value="three">3</option> 
+            <option value="four">4</option>
+            <option value="five">5</option> 
+            <option value="six">6</option> 
+            <option value="seven">7</option>  
+        </select>
+    </form>
+    
+    {% if request.method == 'POST' %}
+    {% if request.POST.days == 'one' %}
+    <p>It's 1</p>
+    {% elif request.POST.days == 'two' %}
+    <p>It's 2</p>
+    {% elif request.POST.days == 'three' %}
+    <br>
+    <p style="color: white;">
+        <h3>There are various workout routines that can work for a 3 day split, but we've only chosen to show you the four that we think are most effective.</h3>
+
+        <div>Push Pull Leg 3 Day Split
+        Classic Bodybuilder 3 Day Split
+        Upper Lower 3 Day Split
+        Full Body 3 Day Split
+        Let's go over how each will look, then we will give you sample fully-designed programs for all of them.
+        </div> 
+        <br>
+        <div>
+        1. PUSH PULL LEG 3 DAY SPLIT:
+        <br>
+        Session 1: Push
+        <br>
+        Session 2: Pull
+        <br>
+        Session 3: Legs 
+        <br>
+        These can be done on any day of the week, but ideally you want to have one rest day between push and pull days and two rest days after legs. i.e. Monday, Wednesday, Friday are your workout days.
+        <br>
+        Push days include your chest, shoulders, and triceps; Pull days include your back and biceps; Leg days include your glutes, hamstrings, quads, and calves. 
+        </div>
+        <br>
+        <div>
+        2. CLASSIC BODYBUILDER 3 DAY SPLIT:
+        <br>
+        Session 1: Chest, Triceps
+        <br>
+        Session 2: Back, Biceps
+        <br>
+        Session 3: Legs, Shoulders
+        <br>
+        This bodybuilding program places your three largest muscle groups on their own days, with the smaller muscle groups supplementing them. Generally speaking, the above is the best way to split up the major muscle groups. However, if you have specific muscles that are lagging and need more attention (for example, your shoulders or legs), then you can structure the split in different ways.
+        <br>
+        For example: 
+        <br>
+        Session 1: Chest, Back, Biceps
+        <br>
+        Session 2: Shoulders, Triceps
+        <br>
+        Session 3: Legs
+        <br>
+        Like the Push Pull Leg Split, it's best to have one rest day between the upper body workout days and two after the leg day, as usually leg workouts are the most taxing on the body.
+        </div>
+        <br>
+        <div>
+        3. UPPER LOWER 3 DAY SPLIT:
+        <br>
+        An upper lower 3 day split will require a 2 week overview to see how it works.
+        <br>
+        Week 1:
+        <br>
+        Session 1: Upper
+        <br>
+        Session 2: Lower
+        <br>
+        Session 3: Upper
+        <br>
+        Week 2:
+        <br>
+        Session 4: Lower
+        <br>
+        Session 5: Upper
+        <br>
+        Session 6: Lower 
+        <br>
+        And then it repeats. So you will have one week with two upper body days and one weeks with two lower body days. As such, your training cycle should end on a week that has two lower body days.
+        <br>
+        As for rest days, ideally you should have one rest day between two sessions and two rest days between one of the sessions each week. i.e. Tu, Th, Sa or M, W, F are workout days. 
+        <br>
+        This is 3 day split is cool because it ups the frequency of how often your muscle groups are being worked.
+        <br>
+        Upper body days include all of your upper body muscles: chest, back, shoulders, biceps, and triceps; Lower body days include all of your lower body muscles: glutes, hamstrings, quads, and calves.  
+        </div>
+        <br>
+        <div>
+            4. FULL BODY 3 DAY WORKOUT ROUTINE:
+            <br>
+            As the name suggest, a full body workout split involves full body workouts for each of the three sessions.
+            <br>
+            Session 1: Full Body
+            <br>
+            Session 2: Full Body
+            <br>
+            Session 3: Full Body
+            <br>
+            Like the other splits, ideally, you have rest days between the workout sessions.
+            <br>
+        </div>
+    </p>
+    {% elif request.POST.days == 'four' %}
+    <p>It's 4</p>
+    {% elif request.POST.days == 'five' %}
+    <p>It's 5</p>
+    {% elif request.POST.days == 'six' %}
+    <p>It's 6</p>
+    {% elif request.POST.days == 'seven' %}
+    <p>It's 7</p>
+    {% endif %}
+{% endif %}
+</div>
 
 {% endblock %}
