@@ -1,63 +1,14 @@
+{% extends "fitness/base.html" %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "fitness/bootstrap.min.css"  %}">
+{% block content %}
 
-    <title>Fitness</title>
-    <style>
-        /* Custom CSS for the toggle button */
-        .navbar-toggler-icon {
-            background-color:  #56565a; /* Change the background color of the toggle button */
-        }
-        .navbar-toggler.collapsed .navbar-toggler-icon {
-            background-color:  #56565a; /* Change the background color when the button is collapsed */
-        }
-    </style>
-</head>
-<body>
-    <nav id="topNav" class="navbar navbar-light">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavLeft" aria-controls="navbarNavLeft" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="navbar-brand mx-auto">
-            <a href="{% url 'home' %}">
-                <img src="{% static "Visa/Logo.png" %}" class="d-inline-block align-top" alt="Logo Here">
-            </a>
-            </div>
-    </nav>
-    <div class="container toggle-menu">
-        <div class="collapse navbar-collapse" id="navbarNavLeft">
-            <ul class="list-group">
-                <li class="list-group-item"><a href="#About">About</a></li>
-                <li class="list-group-item"><a href="#Contact">Contact</a></li>
-                <li class="list-group-item"><a href="#Supplements">Supplements</a></li>
-                <li class="list-group-item"><a href="#Nutrition">Nutrition Tracking</a></li>
-                <li class="list-group-item"><a href="#Body">Body Fat Percentage Calculation</a></li>
-                <li class="list-group-item"><a href="#Logging">Workout Logging</a></li>
-                <li class="list-group-item"><a href="#Tips">Workout Tips</a></li>
-                <li class="list-group-item"><a href="#Mental">Mental Health Tracking</a></li>
-                <li class="list-group-item"><a href="#Trainers">Certified Trainers</a></li>
-                <li class="list-group-item"><a href="#Gym">Gym Locator</a></li>
-                <li class="list-group-item"><a href="#Trainers">Trainers Page</a></li>
-                <!-- Add more menu items for your functionalities here -->
-            </ul>
-        </div>
-    </div>
-    <div class="wallpaper-home" style="margin-left:0%; position: relative;">
-        <img src="{% static "fitness/ahsan.jpg" %}" style="width: 100%; height: 660px;">
-    </div>
-    <br>
-    <br>
-    <div>
-        <h1 id="About">About</h1>
+<div class="wallpaper-home" style="margin-left:0%; position: relative;">
+  <img src="{% static "fitness/ahsan.jpg" %}" style="width: 100%; height: 660px;">
+</div>
+    <div style="background-color: black; color: white;" id="About"  >
+        <h1 style="color: white;">About</h1>
         <p>Welcome to (name to be decided), your one-stop destination for all your fitness needs. Whether you're just starting your fitness journey or you're a certified trainer looking to help others, we've got you covered with a range of innovative functionalities designed to assist you in achieving your fitness goals.
 
             <h3>For Fitness Enthusiasts</h3>
@@ -73,7 +24,7 @@
             Upload your image, and our algorithm will calculate your body fat percentage, providing you with valuable insights into your progress.
             <br>
             <br>
-            <h4>4. Workout Logging</h4>
+            <h4><a href="{% url 'workoutlogging' %}" style="color: white;">4. Workout Logging</a></h4>
             Easily log your workouts and monitor your progress over time. We can even suggest workout splits based on your available days per week, helping you plan your fitness routine effectively.
             <br>
             <br>
@@ -82,7 +33,7 @@
             <br>
             <br>
             <h4>6. Mental Health Tracking</h4>
-            We believe that mental health is an integral part of overall well-being. Use our tools to track and manage your mental health as you pursue your fitness goals.
+            We believe that mental health is an integral part of overall well-being. Use our tools to boost your mental health as you pursue your fitness goals.
             <br>
             <br>
             <h4>7. Certified Trainers</h4>
@@ -103,7 +54,7 @@
             
             Whether you're a fitness enthusiast or a certified trainer, [Your Fitness Website Name] is your trusted partner in achieving fitness success. Join us today and take the first step towards a healthier, stronger you!</p>
     </div>
-    <footer class="text-center text-lg-start bg-primary text-muted" id="Contact">
+    <footer class="text-center text-lg-start bg-primary text-muted" id="Contact" style="background-color: black; color: white;">
         <!-- Section: Social media -->
         <br>
         <!-- Section: Social media -->
@@ -119,14 +70,14 @@
                 <h6 class="text-uppercase fw-bold mb-4">
                   <i class="fas fa-plane-departure"></i>
                 </h6>
-                <p>
+                <p style="color: white;">
                   Know More about our members:
                 </p>
               </div>
               <!-- Grid column -->
       
               <!-- Grid column -->
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="color: white;">
                 <!-- Links -->
                 <br>
                 <br>
@@ -140,7 +91,7 @@
               <!-- Grid column -->
       
               <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="color: white;">
                 <!-- Links -->
                 <br>
                 <br>
@@ -154,7 +105,7 @@
               <!-- Grid column -->
       
               <!-- Grid column -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="color: white;">
                 <!-- Links -->
                 <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
                 <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
@@ -180,10 +131,4 @@
         <!-- Copyright -->
     </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock %}
