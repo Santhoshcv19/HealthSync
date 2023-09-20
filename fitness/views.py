@@ -10,6 +10,9 @@ def home(request):
 def workoutlogging(request):
     return render(request, "fitness/workoutlogging.html")
 
+def routine(request):
+    return render(request, "fitness/routine.html")
+
 def nutrient(request):
     return render(request, "fitness/nutrient.html")
 

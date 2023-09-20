@@ -10,13 +10,14 @@
     <br>
     <br>
     <h2 style="color: white;">How many days will you be working out in a week?</h2>
+    <i>Note: You can push the rest day to any day you like.</i>
+    <br>
+    <br>
     <label for="days">Select the number of days:</label> 
     <form method="post">
         {% csrf_token %}
         <select name="days" id="days" onchange="this.form.submit()"> 
             <option value="select">Select</option>
-            <option value="one">1</option> 
-            <option value="two">2</option> 
             <option value="three">3</option> 
             <option value="four">4</option>
             <option value="five">5</option> 
@@ -26,24 +27,24 @@
     </form>
     
     {% if request.method == 'POST' %}
-    {% if request.POST.days == 'one' %}
-    <p>It's 1</p>
-    {% elif request.POST.days == 'two' %}
-    <p>It's 2</p>
-    {% elif request.POST.days == 'three' %}
+    {% if request.POST.days == 'three' %}
     <br>
     <p style="color: white;">
         <h3>There are various workout routines that can work for a 3 day split, but we've only chosen to show you the four that we think are most effective.</h3>
 
-        <div>Push Pull Leg 3 Day Split
-        Classic Bodybuilder 3 Day Split
-        Upper Lower 3 Day Split
-        Full Body 3 Day Split
+        <div>PUSH PULL LEG SPLIT
+        <br>
+        CLASSIC BODYBUILDER SPLIT
+        <br>
+        UPPER LOWER SPLIT
+        <br>
+        FULL BODY SPLIT
+        <br>
         Let's go over how each will look, then we will give you sample fully-designed programs for all of them.
         </div> 
         <br>
         <div>
-        1. PUSH PULL LEG 3 DAY SPLIT:
+        1. PUSH PULL LEG:
         <br>
         Session 1: Push
         <br>
@@ -57,7 +58,7 @@
         </div>
         <br>
         <div>
-        2. CLASSIC BODYBUILDER 3 DAY SPLIT:
+        2. CLASSIC BODYBUILDER:
         <br>
         Session 1: Chest, Triceps
         <br>
@@ -79,7 +80,7 @@
         </div>
         <br>
         <div>
-        3. UPPER LOWER 3 DAY SPLIT:
+        3. UPPER LOWER:
         <br>
         An upper lower 3 day split will require a 2 week overview to see how it works.
         <br>
@@ -109,7 +110,7 @@
         </div>
         <br>
         <div>
-            4. FULL BODY 3 DAY WORKOUT ROUTINE:
+            4. FULL BODY WORKOUT ROUTINE:
             <br>
             As the name suggest, a full body workout split involves full body workouts for each of the three sessions.
             <br>
@@ -122,15 +123,412 @@
             Like the other splits, ideally, you have rest days between the workout sessions.
             <br>
         </div>
+        <br>
+        <br>
+        <div>
+            <h3 style="color: white;">WHICH 3 DAY SPLIT IS RIGHT FOR YOU? <br><br> A. WHAT IS THE BEST 3 DAY WORKOUT SPLIT FOR BUILDING MUSCLE?</h3>
+            The best 3 day splits for building muscle are the Push Pull Leg and Classic Bodybuilder splits because they offer greater volume on your muscle groups per workout session. <br> That said, as a true beginner, the Full Body and Upper/Lower split will be best for building muscle (albeit all of the 3 day splits will be good for a beginner), as you won't need so much volume for each muscle group per workout and a higher frequency of hitting your muscle groups will be best for muscle growth. That's the beauty of newbie gains, it's a lot easier. And as far as how long should a workout be, just focus on getting the right volume in and less on how much time you're in the gym.
+            <br>
+            <br>
+            <h3 style="color: white;">B. WHAT IS THE BEST 3 DAY WORKOUT SPLIT FOR STRENGTH?</h3>
+            All of the splits can be good for building strength, but the Push-Pull-Legs, Classic Bodybuilder, and Upper/Lower splits would arguably be best. For beginners wanting to improve strength, the 5x5 workout plan will also get results.
+            <br>
+            All you have to do is focus your workouts around big compound lifts and focus on increasing the weight loads of these lifts over the course of your training cycle.
+            
+            Strength comes from doing big compound lifts (and there will be a crossover of hypertrophy as well). So that's where the majority of your focus should be.
+            <br>
+            However, your strength training plan can also include supplemental exercises, like stiff-leg deadlifts for hamstring and glutes, and lunges for quads and glutes. There really won't be much focus on isolation exercises as they don't help much with overall strength (although they can if certain smaller muscle groups are lagging).
+
+            Basically, for strength training, you emphasize big compound lifts and assistance lifts that help with those big compound lifts. 
+            <br>
+            <br>
+            <h3 style="color: white;">C. WHAT IS THE BEST 3 DAY WORKOUT SPLIT FOR BUILDING MUSCLE & STRENGTH?</h3>
+            Most people want to build muscle and strength while keeping fat off as much as possible. All of the plans can do this, if using the right intensity. Beginners can do any of the splits really and see great results. However, for intermediate and advanced trainees, we recommend the Push Pull Legs or Classic Bodybuilder for a good mix of hypertrophy and strength gains.
+            <br>
+            <br>
+            <h3 style="color: white;">D. WHAT IS THE BEST 3 DAY WORKOUT SPLIT FOR FAT LOSS?</h3>
+            The best 3 day split for fat loss is the Upper/Lower and Full Body split because these kinds of workouts maximize calorie burn.
+            <br>
+            That said, fat loss really comes down to diet, as even if you burn a lot of calories with weights and cardio workouts, you can still eat that amount of calories in a single sitting.
+
+            For reference, a vigorous weight training session will only burn around 180-250 calories and 30 minutes of steady state running will burn around 250-300 calories...A traditional cob salad has 623 calories. 
+            <br>
+            To lose fat, you need to eat less calories than you burn per day.
+
+            As such, with a proper diet, you can lose fat with any of the splits. The same actually goes for building muscle. If you eat at a surplus with enough protein, then you can gain muscle with any of the 3 day workout plans.
+        </div>
     </p>
     {% elif request.POST.days == 'four' %}
-    <p>It's 4</p>
+    <p style="color: white;">
+        <h3>There are numerous ways that you can run a 4-day split depending on your specific needs and goals. Here are the most effective 5 of those.</h3>
+        FULL BODY WORKOUT SPLIT
+        <br>
+        UPPER LOWER SPLIT
+        <br>
+        STRENGTH/HYPERTROPHY SPLIT
+        <br>
+        PUSH PULL LEGS SPLIT
+        <br>
+        BODYBUILDING "BODY PART" SPLIT
+        <br>
+        <br>
+        1. FULL BODY WORKOUT SPLIT:
+        <br>
+        Performing full-body workouts 4 days a week can work, but it can be a little tricky. It It will require even more attention to recovery and monitoring load used. This type of workout is more likely to benefit the person who is more interested in maintaining overall fitness levels rather than pushing it hard during the session. If that's you, then a full body split workout routine could be a great option.
+        <br>
+        <br>
+        2. UPPER LOWER SPLIT:
+        <br>
+        The upper lower split is arguably the most suitable option for a 4 day split workout, as it was specifically designed to be a 4 day routine (even though it can be organized otherwise) - 2 upper body days & 2 lower body days.
+        <br>
+        This split is great for someone looking to have a good balance between training frequency and training volume. Moreover, it is flexible, in that you can play around with it based on your goals (i.e. you can do two strength and two hypertrophy workouts each week, or in other words, heavy low rep days and lighter high rep days). 
+        <br>
+        Day 1: Upper Body Workout
+        <br>
+        Day 2: Lower Body Workout
+        <br>
+        Day 3: Upper Body Workout
+        <br>
+        Day 4: Lower Body Workout
+        <br>
+        <br>
+        3. STRENGTH/HYPERTROPHY SPLIT:
+        <br>
+        This is actually great program for those who want to train for both strength and hypertrophy. A program like this has you training specifically for strength on two days and then running a routine more similar to bodybuilding for the other two days.
+        <br>
+        <br>
+        4. PUSH PULL LEG SPLIT:
+        <br>
+        It divides movements into three days:
+        <br>
+        Day 1 - Pushing: You perform upper body pushing movements.
+        <br>
+        Day 2 - Pulling: On the second day, you perform deadlifts and upper body pulling movements.
+        <br>
+        Day 3 - Legs: On the third day, you train the legs.
+        <br>
+        The first thing to note is that a Push Pull Leg split cycles through 3 workout sessions. However, that doesn't constrain it to only being used 3 days a week. To work this into a 4-day workout program, you simply just cycle through the sessions. This will result in your sessions changing order every week. 
+        <br>
+        It is becoming of the more common splits that trainees use.
+        <br>
+        <br>
+        5. BODYBUILDING "BODY PART" SPLIT:
+        <br>
+        Some may still prefer to use a bodybuilding program and hit every muscle hard once a week. To do this, bodybuilders will usually train maybe 5 days or even 6 days a week. However, you can get this done in 4 days if you don't have the time to make it to the gym more. The easiest way to do this would be as follow:
+        <br>
+        Day 1: Chest and Core
+        <br>
+        Day 2: Legs and Arms
+        <br>
+        Day 3: Back
+        <br>
+        Day 4: Shoulders, Arms, and Core
+        <br>
+        The benefits of training like this are mainly geared towards the bodybuilder. Using a split like this allows to you to cause maximal damage to a muscle in the belief that it will grow more. 
+        <br>
+        <br>
+        <h3>WHICH 4-DAY SPLIT WORKOUT IS BEST?</h3>
+        So, what's the best 4 day workout split?
+        <br>
+        While all the options above will work if done correctly, for the majority of people, an upper/lower split works great. 
+        <br>
+        It works so well for building muscle mass and strength because it creates an optimal balance between training frequency (how often you hit a muscle) and training volume (how much volume - sets and reps - you do for a muscle group).
+        <br>
+        It's really hard to beat this split, especially when following some simple rules.
+    </p>
     {% elif request.POST.days == 'five' %}
-    <p>It's 5</p>
+    <p style="color: white;">
+        <br>
+        <h3>DIFFERENT TYPES OF 5 DAY WORKOUT SPLITS</h3>
+        Here are a few examples of different ways that you can create a 5 day workout split...
+        <br>
+        <br>
+        BRO SPLIT
+        <br>
+        UPPER LOWER PUSH PULL LEG SPLIT
+        <br>
+        BODY PART SPLIT WITH UPPER BODY EMPHASIS
+        <br>
+        BODY PART SPLIT WITH CORE & CARDIO EMPHASIS
+        <br>
+        <br>
+        1. BRO SPLIT:
+        <br>
+        Day 1: Chest
+        <br>
+        Day 2: Legs
+        <br>
+        Day 3: Back
+        <br>
+        Day 4: Shoulder & Arms
+        <br>
+        Day 5: Core & Cardio
+        <br>
+        The bro split (aka body part split) allows you to keep core and cardio separate from your strength training workouts, which might be ideal for someone who doesn't want to spend extra time to do core and cardio after their workout.
+        <br>
+        If you have good shoulders and arms and you want to give yourself a full workout focusing on core strength and heart health, this is a good 5 day workout routine.
+        <br>
+        If you want to do a whole workout focusing on your shoulders or arms, because they are lagging, you can always add other muscle groups together (i.e. chest/back, chest/shoulders, back/arms, etc.).
+        <br>
+        <br>
+        2. UPPER LOWER PUSH PULL LEGS SPLIT:
+        <br>
+        Day 1: Upper Body
+        <br>
+        Day 2: Lower Body
+        <br>
+        Day 3: Rest
+        <br>
+        Day 4: Push
+        <br>
+        Day 5: Pull
+        <br>
+        Day 6: Legs
+        <br>
+        Day 7: Rest
+        <br>
+        The Upper Lower Push Pull Leg split is an amalgamation of an upper and lower split and a push pull leg split. It is an interesting way to do a 5 day split and it's starting to become popular. This is because studies are showing hitting multiple muscle groups twice a week may be better for hypertrophy and strength.
+        <br>
+        <br>
+        3. BODY PART SPLIT WITH UPPER BODY EMPHASIS:
+        <br>
+        Day 1: Chest, Shoulders, Triceps
+        <br>
+        Day 2: Back, Biceps, Core
+        <br>
+        Day 3: Legs
+        <br>
+        Day 4: Chest, Shoulders, Triceps
+        <br>
+        Day 5: Back, Biceps, Core
+        <br>
+        Day 6 & 7: Rest
+        <br>
+        This is somewhat similar to the previous 5 day workout split, but you will only be working your legs once a week rather than twice a week. This is not one we recommend for most people, but it is an example of how you can tailor a 5 day workout split to your goals. <br> For example, this one would make sense if you have good legs but your upper body is not up to par.
+        <br>
+        <br>
+        4. BODY PART SPLIT WITH CORE & CARDIO EMPHASIS:
+        <br>
+        Day 1: Chest, Shoulders, Triceps
+        <br>
+        Day 2: Core & Cardio
+        <br>
+        Day 3: Back, Biceps
+        <br>
+        Day 4: Core & Cardio
+        <br>
+        Day 5: Legs
+        <br>
+        Day 6 & 7: Rest
+        <br>
+        This is an example of a 5 day split that emphasizes core and cardio. If you want to lose fat while maintaining muscle, this could be a good option for you. 
+        <br>
+        <br>
+        All in all, you can get creative with your 5 day workout split and set it up however you like. 
+        <br>
+        A 5 day split is arguably the best workout split for building muscle because it allows you to maximize training volume and emphasis on each major muscle group while still giving you just enough rest days each week.
+        <br>
+        5 day splits are not the best for beginners (like true beginners) because it requires such a substantial commitment. Beginners would do better with a 3 or 4 day split, even just full body workouts each session. Beginners can make gains easily, so a split with so much volume is really not necessary.
+        <br>
+        On the whole, 5 day workout splits are one of the best options for building muscle and are generally recommended for people who have been training for at least 6 months (and have a solid foundation). That said, if you are a strong beginner, you can give it a try for a couple months and see how you like it. A lot of fitness is about experimenting. Try new things and stick with them for a couple months, analyze results, and adjust.
+    </p>
     {% elif request.POST.days == 'six' %}
-    <p>It's 6</p>
+    <p style="color: white;">
+        <h3>DIFFERENT OPTIONS FOR A 6 DAY WORKOUT SPLIT</h3>
+        There are several ways to program a 6 day lifting routine. Below are some of the most popular and effective options for 6 day splits.
+        <br>
+        <br>
+        PUSH PULL LEG WORKOUT SPLIT
+        <br>
+        UPPER/LOWER WORKOUT SPLIT
+        <br>
+        ARNOLD WORKOUT SPLIT
+        <br>
+        BRO SPLIT
+        <br>
+        ATHLETE ROUTINE
+        <br>
+        <br>
+        1. PUSH PULL LEG WORKOUT SPLIT:
+        <br>
+        Day 1: Push
+        <br>
+        Day 2: Pull
+        <br>
+        Day 3: Legs
+        <br>
+        Day 4: Push
+        <br>
+        Day 5: Pull
+        <br>
+        Day 6: Legs
+        <br>
+        Day 7: Rest 
+        <br>
+        <br>
+        2. UPPER/LOWER WORKOUT SPLIT:
+        <br>
+        Day 1: Upper (strength)
+        <br>
+        Day 2: Lower (strength)
+        <br>
+        Day 3: Upper (hypertrophy)
+        <br>
+        Day 4: Lower (hypertrophy)
+        <br>
+        Day 5: Upper (endurance)
+        <br>
+        Day 6: Lower (endurance)
+        <br>
+        Day 7: Rest
+        <br>
+        <br>
+        3. ARNOLD WORKOUT SPLIT:
+        <br>
+        Day 1: Chest & Back
+        <br>
+        Day 2: Legs
+        <br>
+        Day 3: Shoulders & Arms
+        <br>
+        Day 4: Rest
+        <br>
+        Repeat
+        <br>
+        <br>
+        4. BRO SPLIT:
+        <br>
+        Day 1: Chest & Tricep
+        <br>
+        Day 2: Back & Bicep
+        <br>
+        Day 3: Shoulders & Calves
+        <br>
+        Day 4: Legs & Glutes
+        <br>
+        Day 5: Rest
+        <br>
+        Day 6: Chest & Tricep
+        <br>
+        Day 7: Back & Bicep
+        <br>
+        Day 8: Shoulders & Calves
+        <br>
+        Day 9: Legs & Glutes
+        <br>
+        Day 10: Rest
+        <br>
+        Day 11: Chest & Tricep
+        <br>
+        Day 12: Back & Bicep
+        <br>
+        Day 13: Shoulders & Calves
+        <br>
+        Day 14: Legs & Glutes
+        <br>
+        Repeat 
+        <br>
+        This is your typical bro split with just one rest day after all muscles have been worked.
+        <br>
+        As you can see, on the two week scale, you've trained each muscle group 3 times. So, the “6 Day Bro Split” allows for a little higher muscle frequency than the more standard 5 day bro split, yet it still allows for plenty of rest time between each muscle group.
+        <br>
+        <br>
+        5. ATHLETE ROUTINE:
+        <br>
+        Day 1: Upper
+        <br>
+        Day 2: Lower
+        <br>
+        Day 3: Bodyweight HIIT or Cardio & Core & Movement Practice (agility, explosiveness, speed)
+        <br>
+        Day 4: Rest
+        <br>
+        Repeat
+        <br>
+        <br>
+    </p>
     {% elif request.POST.days == 'seven' %}
-    <p>It's 7</p>
+    <p style="color: white;">
+        <h3>WHAT IS THE BEST WORKOUT SPLIT FOR TRAINING 7 DAYS A WEEK?</h3>
+        With a 7 day workout plan, you can build muscle and you can get stronger, but it won't be sustainable. So, if you are into strength training or bodybuilding, only use a 7 day plan for a short training cycle.
+        <br>
+        You can implement a short 7 day workout plan every 6-12+ months as a way to shock your body. Just be sure to give yourself the rest you need. 
+        <br>
+        All in all, if you like to workout or be in the gym every day and staying active, but you know how and when to turn intensity up and down and can listen to your body when it's time to rest, then you can workout 7 days a week and potentially see some great improvements in size and strength or at the very least get super lean.
+        <br>
+        <br>
+        Because there are so many possible 7 day split options, we have decided to provide you various routines based on different goals and fitness levels. That way you can choose what best suits. 
+        <br>
+        <br>
+        UPPER LOWER SPLIT (Beginner-Intermediate (1+ years) - 4-8 weeks)
+        <br>
+        BODY PART SPLIT (Intermediate (1-2+ years) - 4-12 weeks)
+        <br>
+        THE BIG 6 SPLIT (Intermediate-Advanced (2-3+ years) - 4-8 weeks)
+        <br>
+        <br>
+        1. UPPER LOWER SPLIT:
+        <br>
+        Goals: Overall Fitness (Build Muscle, Gain Strength, Lose Fat)
+        <br>
+        As an early-intermediate (or a beginner on the cusp of being an intermediate), we are going to keep the 7 day workout plan short. The duration of this plan is 4-8 weeks. Start with 4 weeks of training with this 7 day split, and then assess how you feel and your progress before continuing with another week. 
+        <br>
+        Each week you will have 4 strength training sessions, 2 cardio sessions, and 1 mobility session. The weightlifting portion of the plan is based on an upper lower split.
+        <br>
+        Day 1: Upper Body Workout (Strength Focused)
+        <br>
+        Day 2: Lower Body Workout (Strength Focused)
+        <br>
+        Day 3: Cardio Workout #1
+        <br>
+        Day 4: Upper Body Workout (Hypertrophy Focused)
+        <br>
+        Day 5: Lower Body Workout (Hypertrophy Focused)
+        <br>
+        Day 6: Cardio Workout #2
+        <br>
+        Day 7: Mobility Workout
+        <br>
+        <br>
+        2. BODY PART SPLIT:
+        <br>
+        Day 1: Chest Workout
+        <br>
+        Day 2: Back Workout
+        <br>
+        Day 3: Arm & Ab Workout
+        <br>
+        Day 4: Cardio/Aerobic Class or Mobility Workout
+        <br>
+        Day 5: Shoulder Workout
+        <br>
+        Day 6: Leg Workout
+        <br>
+        Day 7: Cardio or Mobility
+        <br>
+        While you will only be targeting your muscle groups once a week, they will be high volume workouts. Moreover, there will be some crossover of muscles, so many muscles will be worked more than once per week.
+        <br>
+        <br>
+        3. THE BIG 6 SPLIT:
+        <br>
+        Day 1: Bench Press Day
+        <br>
+        Day 2: Squat Day
+        <br>
+        Day 3: Pull Up Day
+        <br>
+        Day 4: Accessory Day
+        <br>
+        Day 5: Deadlift Day
+        <br>
+        Day 6: Overhead Press Day
+        <br>
+        Day 7: Bent Over Row Day
+        <br>    
+        <br>
+        For all three 7 day workout plans above, if your body is feeling fatigued and performance is dropping, then take the rest you need.
+        <br> You can take 1-7 days off and then get back to the plan. Listen to your body and rest when needed (even if it's just one day off and then you continue where you left off). 
+    </p>
     {% endif %}
 {% endif %}
 </div>

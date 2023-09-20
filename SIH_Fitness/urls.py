@@ -30,6 +30,7 @@ urlpatterns = [
     path('mental',views.mental, name='mental'),
     path('ctrainer',views.ctrainer, name='ctrainer'),
     path('location',views.location, name='location'),
+    path('routine', views.routine, name='routine'),
     #Auth
     path('signup', views.SignUp.as_view(), name='signup'),
     path('login', auth_views.LoginView.as_view(), name='login'),
