@@ -41,3 +41,23 @@ if (!window['jQuery']) alert('The jQuery library must be included before the smo
 
 // Initialize all .smoothScroll links
 jQuery(function ($) { $.localScroll({ filter: '.smoothScroll' }); });
+// Initialize all .smoothScroll links
+// jQuery(function ($) {
+//     $.localScroll({
+//         filter: '.smoothScroll',
+//         // Add a setting for handling relative URLs
+//         onBefore: function (e, anchor, $target) {
+//             // Check if the anchor's href is a relative URL
+//             if (anchor.hash && anchor.href.replace(anchor.hash, '') === window.location.href.replace(window.location.hash, '')) {
+//                 e.preventDefault(); // Prevent the default behavior
+//                 var offset = $target.offset();
+//                 if (offset) {
+//                     $('html, body').animate({
+//                         scrollTop: offset.top
+//                     }, 1000); // Adjust the duration as needed
+//                 }
+//             }
+//         }
+//     });
+// });
+

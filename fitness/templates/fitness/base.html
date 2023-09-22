@@ -71,7 +71,7 @@
 
             
             <div style="display: flex;  margin-top: 13px; margin-left: -10px;">
-                <a class="navbar-brand" href="{% url 'home' %}#About"><h4 class="about2 smoothScroll">About</h4></a>
+                <a class="navbar-brand" href="#About"><h4 class="about2 smoothScroll">About</h4></a>
                 {% if user.is_authenticated %}
                 <h4 class="login"><a href="{% url 'logout' %}" class="login" style="color: --primary-color;">Log Out</a></h4>
                 {% else %}

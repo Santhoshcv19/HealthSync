@@ -1,21 +1,106 @@
+
+
 {% extends "fitness/base.html" %}
 
 {% load static %}
 
 {% block content %}
 
-<div class="container">
+<style>
+
+.container1 {
+  text-align: center;
+   background: #1a2a36;
+  border-radius: 9px;
+  border-top: 10px solid --primary-color;
+  width: 500px;
+  height: 750px; 
+  margin: 0 auto; /* Centers horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box h4 {
+  font-family: "Source Sans Pro", sans-serif;
+  color:--primary-color;
+  font-size: 20px;
+  margin-top: 94px;
+}
+
+.box h4 span {
+  color: white;
+  font-weight: lighter;
+}
+
+.box h5 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 13px;
+  color: white;
+  letter-spacing: 1.5px;
+  margin-top: -15px;
+  margin-bottom: 70px;
+}
+
+
+.btn1 {
+  border: 0;
+  background: #279EFF;
+  color: black;
+  border-radius: 7px;
+  width: 340px;
+  height: 49px;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn1:hover {
+  background: #279EFF ;
+} 
+
+
+/* body{
+    display: flex; justify-content:center ; align-items: center;height: 100vh;overflow: hidden;
+} */
+</style>
+
+<!-- <div class="container">
     <br>
-    <br><br><br><br>
-    <h2 style="color: white">Signup</h2>
+    <h2 style="color: white">Login</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-secondary">Sign Up</button>
+        <button type="submit" class="btn btn-secondary">Login</button>
     </form>
-    <br>
-    <p>Already have an account?</p>
-    <a href="login"><button class="btn btn-secondary">Login</button></a>
-</div>
+</div> -->
+<!-- <body style="display: flex; justify-content:center ; align-items: center;height: 100vh;overflow: hidden;"> -->
+    <div class="container1">
+      <!-- <form name="form1" class="box" method="post"> -->
+        
+        <!-- <input type="text" name="email" placeholder="Email" autocomplete="off" />
+        <input type="password" name="password" placeholder="Passsword" id="pwd" autocomplete="off" />
+        <a href="#" class="forgetpass">Forget Password?</a>
+        <input type="submit" value="Sign in" class="btn1" /> -->
+        <form method="post" class="box">
+            <br>
+            <br><br>
+            <h2>Signup</h2>
+            <br>
+            <h5 style="margin-bottom: 45px;">Create your account!</h5>
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn custom-btn bordered mt-3 btn1">Signup</button>
+            <br>
+            <br>
+            <br>
+            <p>Alread have an account?</p>
+            <a class="btn custom-btn bordered mt-3 btn1" href="{% url 'login' %}">Login</a>
+        </form>
+      <!-- </form> -->
+    </div>
 
 {% endblock %}
+
+

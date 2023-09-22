@@ -10856,9 +10856,9 @@ a.text-dark:hover {
     text-decoration: none !important
 }
 
-.text-reset {
+/* .text-reset {
     color: inherit !important
-}
+} */
 
 .visible {
     visibility: visible !important
