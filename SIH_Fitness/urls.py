@@ -28,6 +28,7 @@ urlpatterns = [
     path('bodyfat',views.bodyfat, name='bodyfat'),
     path('tips',views.tips, name='tips'),
     path('mental',views.mental, name='mental'),
+    path('quiz',views.quiz, name='quiz'),
     path('trainers', views.trainers, name='trainers'),
     path('location',views.location, name='location'),
     path('routine', views.routine, name='routine'),

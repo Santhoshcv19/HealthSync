@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "fitness/bootstrap.min.css"  %}">
-    <link rel="icon" type="image/png" href="{% static "fitness/ahsan1.png" %}">
+    <link rel="icon" type="image/png" href="{% static "fitness/logo.jpg" %}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static "fitness/font-awesome.min.css"  %}">
     <link rel="stylesheet" href="{% static "fitness/aos.css"  %}">
@@ -67,11 +67,10 @@
             
             
             </div>
-            <a class="navbar-brand smoothScroll" href="{% url 'home' %}" style="margin-left: 110px;">HealthSync</a>
+            <a class="navbar-brand smoothScroll" href="{% url 'home' %}" style="margin-left: 20px;">HealthSync</a>
 
             
             <div style="display: flex;  margin-top: 13px; margin-left: -10px;">
-                <a class="navbar-brand" href="#About"><h4 class="about2 smoothScroll">About</h4></a>
                 {% if user.is_authenticated %}
                 <h4 class="login"><a href="{% url 'logout' %}" class="login" style="color: --primary-color;">Log Out</a></h4>
                 {% else %}

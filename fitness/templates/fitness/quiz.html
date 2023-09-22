@@ -1,0 +1,74 @@
+{% extends "fitness/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br><br><br>
+    <h2 style="margin-left: 450px;">Personality Quiz</h2>
+    <br>
+        <form id="personalityForm">
+            <div>
+                <label for="q1">1. When attending a party or social event, do you typically:</label><br>
+                <input type="radio" name="q1" value="E"> Enjoy meeting new people and being in a lively atmosphere<br>
+                <input type="radio" name="q1" value="I"> Prefer smaller gatherings with close friends and meaningful conversations<br>
+            </div>
+            <br>
+            <div>
+                <label for="q2">2. When facing a problem, do you tend to:</label><br>
+                <input type="radio" name="q2" value="T"> Analyze it logically and focus on finding practical solutions<br>
+                <input type="radio" name="q2" value="F"> Consider the emotional aspects and how it affects people<br>
+            </div>
+            <br>
+            <div>
+                <label for="q3">3. When planning your day, do you:</label><br>
+                <input type="radio" name="q3" value="J"> Prefer having a structured schedule with specific tasks<br>
+                <input type="radio" name="q3" value="P"> Like to keep your options open and adapt as the day unfolds<br>
+            </div>
+            <br>
+            <div>
+                <label for="q4">4. In a new environment, do you usually:</label><br>
+                <input type="radio" name="q4" value="S"> Pay close attention to details and what's happening around you<br>
+                <input type="radio" name="q4" value="N"> Focus on the big picture and possibilities<br>
+            </div>
+            <br>
+            <input type="submit" value="Submit" class="btn btn-outline-primary btn-sm button">
+        </form>
+        <br>
+        <div id="result">
+
+        </div>
+
+        <script>
+            const form = document.getElementById("personalityForm");
+            const result = document.getElementById("result");
+            form.addEventListener("submit", function(e){
+                e.preventDefault();
+                const formData = new FormData(form);
+                const answers = {};
+                formData.forEach((value, key) => {
+                    answers[key] = value;
+                });
+                const personalityType = calculatePersonality(answers);
+                result.innerHTML = `<h2>Your Personality Type: ${personalityType}</h2>`;
+            });
+            function calculatePersonality(answers){
+                const { q1, q2, q3, q4 } = answers;
+                const extrovertScore = (q1 === "E") ? 1:0;
+                const sensingScore = (q4 === "S") ? 1:0;
+                const thinkingScore = (q2 === "T") ? 1:0;
+                const judgingScore = (q3 === "J") ? 1:0;
+
+                if (extrovertScore + sensingScore + thinkingScore + judgingScore >= 3){
+                    return "ESTJ - Extroverted, Sensing, Thinking, Judging";
+                } else{
+                    return "INFP - Introverted, Intuitive, Feeling, Perceiving";
+                }
+            }
+        </script>
+</div>
+
+
+{% endblock %}

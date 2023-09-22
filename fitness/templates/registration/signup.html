@@ -90,7 +90,13 @@
             <br>
             <h5 style="margin-bottom: 45px;">Create your account!</h5>
             {% csrf_token %}
-            {{ form }}
+            &nbsp;&nbsp;&nbsp;Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ form.username }}
+            <br>
+            <br>
+            Enter Password: {{ form.password1 }}
+            <br>
+            <br>
+            Password Again: {{ form.password2 }}
             <button type="submit" class="btn custom-btn bordered mt-3 btn1">Signup</button>
             <br>
             <br>

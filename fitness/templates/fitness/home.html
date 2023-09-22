@@ -6,15 +6,57 @@
 
 <style>
   .sort-indicator::before {
-            content: '\2022'; /* Unicode character for arrow-up */
-            display: inline-block;
-            color: white;
-        }
+    content: '\2022'; /* Unicode character for arrow-up */
+    display: inline-block;
+    color: white;
+  }
+  .bg-overlay{
+    background-image: url("{% static 'fitness/bgimg.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+  }
+  
 </style>
 
-<div class="hero d-flex flex-column justify-content-center align-items-center" style="margin-left:0%; position: relative;">
-  <img src="{% static "fitness/hero-bg.jpg" %}" style="width: 100%">
-</div>
+<section class="hero d-flex flex-column justify-content-center align-items-center" id="home">
+
+  <div class="bg-overlay"></div>
+
+     <div class="container">
+          <div class="row">
+
+               <div class="col-lg-8 col-md-10 mx-auto col-12">
+                    <div class="hero-text mt-5 text-center">
+
+                          <h6 data-aos="fade-up" data-aos-delay="300">A new way to build a healthy lifestyle!</h6>
+
+                          <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">Upgrade your body using Health Sync</h1>
+
+                          <a href="#About" class="btn custom-btn bordered mt-3" data-aos="fade-up" data-aos-delay="700">more info</a>
+                         
+                    </div>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+<section class="feature" id="feature">
+  <div class="container">
+      <div>
+              <h2 class="mb-3 text-white" data-aos="fade-up">Why you need us?</h2>
+              <br>
+              <h6 class="mb-4 text-white" data-aos="fade-up">One Billion People Globally Estimated to be Living with Obesity by 2030</h6>
+              <h6 class="mb-4 text-white" data-aos="fade-up">Start your journey to a healthier life today</h6>
+
+              {% if not user.is_authenticated %}
+              <a href="{% url 'signup' %}" class="btn custom-btn bg-color mt-3" data-aos="fade-up" data-aos-delay="300">Become a member</a>
+              {% endif %}
+
+      </div>
+  </div>
+</section>
 <br>
 <br>
     <div style="background-color: black; color: white;" id="About" class="container">
@@ -99,82 +141,18 @@
             <br>
             Whether you're a fitness enthusiast or a certified trainer, HealthSync is your trusted partner in achieving fitness success. Join us today and take the first step towards a healthier, stronger you!</p>
     </div>
-    <footer class="lked" id="Contact" style="background-color: #171819">
-        <!-- Section: Social media -->
-      
-        <!-- Section: Links  -->
-        <section class="">
-          <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-              <!-- Grid column -->
-              <!-- <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4"> -->
-                <!-- Content -->
-                <p style="color: white; margin-left: 150px; margin-top: 20px">
-                  <br>
-                  Know More about our members:
-                </p>
-              <!-- </div> -->
-              <!-- Grid column -->
-      
-              <!-- Grid column -->
-              <div class="col-md-1 col-lg-1 col-xl-1 mx-auto mb-4" style="color: white;">
-                <!-- Links -->
-                <br>
-                <br>
-                <p>
-                  <a class="navbar-brand" href="https://www.linkedin.com/in/bharat-p-88b15b1b7/" target="_blank" style="font-size: medium;">&nbsp;&nbsp;Bharat</a>
-                </p>
-                <p>
-                  <a class="navbar-brand" href="https://www.linkedin.com/in/jefferson-kingston/" target="_blank" style="font-size: medium;">Jefferson</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-      
-              <!-- Grid column -->
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="color: white;">
-                <!-- Links -->
-                <br>
-                <br>
-                <p>
-                  <a class="navbar-brand" href="https://www.linkedin.com/in/keerthika-devi-s-1b3517221" target="_blank" style="font-size: medium;">Keerthika</a>
-                </p>
-                <p>
-                  <a class="navbar-brand" href="https://www.linkedin.com/in/mahalakshmi-s-761b2b220/" target="_blank" style="font-size: medium;">Mahalakshmi</a>
-                </p>
-              </div>
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="color: white;">
-                <!-- Links -->
-                <br>
-                <br>
-                <p>
-                  <a class="navbar-brand" href="https://www.linkedin.com/in/sundar-karthikeyan-arunkumar-6744ba251/" target="_blank" style="font-size: medium;">Sundar</a>
-                </p>
-                <p>
-                  <a class="navbar-brand" href="https://www.linkedin.com/in/santhosh-cv-91868527a/" target="_blank" style="font-size: medium;">Santhosh CV</a>
-                </p>
-              </div>
-              <!-- Grid column -->
-      
-              <!-- Grid column -->
-              <!-- <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="color: white;">
-                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                <p>
-                  <i class="fas fa-envelope me-3"></i>
-                  info@example.com
-                </p>
-                <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-              </div> -->
-              <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-          </div>
-        </section>
-        <!-- Section: Links  -->
-      
-        <!-- Copyright -->
+    <footer class="lked" id="Contact" style="background-color: #171819;">
+        <br>
+        
+          <h4 style="text-align: center; font-weight: bolder; color: #279EFF;">TEAM</h4>&nbsp;&nbsp;&nbsp;
+          <div class="row no-gutters" style="justify-content: center;">
+          <a class="navbar-brand smoothScroll" href="https://www.linkedin.com/in/bharat-p-88b15b1b7/" target="_blank" style="margin-left: 20px; font-size: medium;">Bharat</a>
+          <a class="navbar-brand smoothScroll" href="https://www.linkedin.com/in/jefferson-kingston/" target="_blank" style="margin-left: 20px; font-size: medium;">Jefferson</a>
+          <a class="navbar-brand smoothScroll" href="https://www.linkedin.com/in/sundar-karthikeyan-arunkumar-6744ba251/" target="_blank" style="margin-left: 20px; font-size: medium;">Sundar</a>
+          <a class="navbar-brand smoothScroll" href="https://www.linkedin.com/in/keerthika-devi-s-1b3517221/" target="_blank" style="margin-left: 20px; font-size: medium;">Keerthika</a>
+          <a class="navbar-brand smoothScroll" href="https://www.linkedin.com/in/mahalakshmi-s-761b2b220/" target="_blank" style="margin-left: 20px; font-size: medium;">Mahalakshmi</a>
+          <a class="navbar-brand smoothScroll" href="https://www.linkedin.com/in/santhosh-cv-91868527a/" target="_blank" style="margin-left: 20px; font-size: medium;">Santhosh CV</a>
+        </div>
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
           © 2023 Copyright:
           <a class="text-reset fw-bold" href="{% url 'home' %}" style="color: #279EFF;">HealthSync</a>

@@ -32,6 +32,9 @@ def tips(request):
 def mental(request):
     return render(request, "fitness/mental.html")
 
+def quiz(request):
+    return render(request, "fitness/quiz.html")
+
 def trainers(request):
     with open("C:/Users/Santhosh CV/Downloads/SIH_Fitness-project/fitness/templates/fitness/trainers.csv", "r") as f:
         r = csv.reader(f)

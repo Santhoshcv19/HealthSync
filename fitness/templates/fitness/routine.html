@@ -1,42 +1,53 @@
 {% extends "fitness/base.html" %}
-
 {% load static %}
 
 {% block content %}
-
 <style>
-    .table1 {
-        border-collapse: separate;
-        border-spacing: 15px; /* Adjust the spacing value as needed */
+    .workout-section {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 10px;
+        display: inline-block;
+        width: calc(33.33% - 20px); 
     }
-    .table2 {
-        border-collapse: separate;
-        border-spacing: 15px; /* Adjust the spacing value as needed */
-        
+
+    .workout-table {
+        border-collapse: collapse;
+        width: 100%;
     }
-    .table-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    table th, table td {
+
+    .workout-table th, .workout-table td {
+        border: 1px solid #555;
         padding: 10px;
+        text-align: center;
+    }
+
+    .workout-table th {
+        background-color: #444;
+    }
+
+   
+    .table-row {
+        text-align: center;
+    }
+
+    
+    body {
+        margin: 0;
     }
 </style>
-
-
 <br>
-<br><br><br><br>
+<br><br>
 <h1 style="text-align: center; color: white;">The Workout for all the splits</h1>
 <div class="container">
-    <div class="table-container">
-    <br>
-    <div>
-        <div id="push">
-        <h2 style="color: white;">1. Push</h2>
-        <br>
-        <table border="5" class="table1">
-            <tr>
+
+    <div class="table-row">
+        <div class="workout-section">
+            <h2 style="color: white;">1. Push</h2>
+            <br>
+            <table border="5" class="table1" style="margin-left: 50px;">
                 <th><u>PUSH</u></th>
             </tr>
             <tr>
@@ -57,49 +68,41 @@
             <tr>
                 <td>Tricep Pressdown</td>
             </tr>
-        </table>
-    </div>
- 
-</div>
-    <br>
-    <div>
-        <div id="pull">
+            </table>
+        </div>
 
-        <h2 style="color: white;">2. Pull</h2>
-        <br>
-        <table border="5" class="table1">
-            <tr>
-                <th><u>PULL</u></th>
-            </tr>
-            <tr>
-                <td>Pull Ups</td>
-            </tr>
-            <tr>
-                <td>Bent Over Rows</td>
-            </tr>
-            <tr>
-                <td>Kroc Rows</td>
-            </tr>
-            <tr>
-                <td>Shrugs</td>
-            </tr>
-            <tr>
-                <td>Rear Delt Fly</td>
-            </tr>
-            <tr>
-                <td>Bicep Curl</td>
-            </tr>
-        </table>
-    </div>
-
-
-</div>
-<br>
-<div>
-    <div id="legs">
-    <h2 style="color: white;">3. Legs</h2>
+        <div class="workout-section">
+            <h2 style="color: white;">2. Pull</h2>
             <br>
-            <table border="5" class="table1">
+            <table border="5" class="table1" style="margin-left: 90px;">
+                <tr>
+                    <th><u>PULL</u></th>
+                </tr>
+                <tr>
+                    <td>Pull Ups</td>
+                </tr>
+                <tr>
+                    <td>Bent Over Rows</td>
+                </tr>
+                <tr>
+                    <td>Kroc Rows</td>
+                </tr>
+                <tr>
+                    <td>Shrugs</td>
+                </tr>
+                <tr>
+                    <td>Rear Delt Fly</td>
+                </tr>
+                <tr>
+                    <td>Bicep Curl</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="workout-section">
+            <h2 style="color: white;">3. Legs</h2>
+            <br>
+            <table border="5" class="table1" style="margin-left: 80px;">
                 <tr>
                     <th><u>LEGS</u></th>
                 </tr>
@@ -123,245 +126,218 @@
                 </tr>
             </table>
         </div>
-</div>
-</div>
-</div>
-<br>
-<br>
-<div class="container">
-    <div class="table-container">
-    <br>
-    <div>
-        <div id="triceps">
-        <h2 style="color: white;">4. Triceps</h2>
-        <br>
-        <table border="5" class="table1">
-            
-<tr>
+    </div> 
+    <div class="table-row">
+        <div class="workout-section">
+            <h2 style="color: white;">4. Triceps</h2>
+            <br>
+            <table border="5" class="table1">
+                <tr>
     
-    <th><u>TRICEPS</u></th>
-</tr>
-<tr>
-    <td>Skullcrusher</td>
-</tr>
-<tr>
-    <td>Close-Grip Bench Press</td>
-</tr>
-<tr>
-    <td>Triceps Dip</td>
-</tr>
-<tr>
-    <td>Bench Dip</td>
-</tr>
-<tr>
-    <td>Triceps Machine Dip</td>
-</tr>
-<tr>
-    <td>Board Press</td>
-</tr>
-<tr>
-    <td>Dumbbell Overhead Triceps Extension</td>
-</tr>
-<tr>
-    <td>Cable Overhead Extension with Rope</td>
-</tr>
-<tr>
-    <td>Single-Arm Cable Kick-Back</td>
-</tr>
-<tr>
-    <td>Cable Push-Down</td>
-</tr>
-<tr>
-    <td>Close-Grip Push-Up</td>
-</tr>
-        </table>
-    </div>
+                    <th><u>TRICEPS</u></th>
+                </tr>
+                <tr>
+                    <td>Skullcrusher</td>
+                </tr>
+                <tr>
+                    <td>Close-Grip Bench Press</td>
+                </tr>
+                <tr>
+                    <td>Triceps Dip</td>
+                </tr>
+                <tr>
+                    <td>Bench Dip</td>
+                </tr>
+                <tr>
+                    <td>Triceps Machine Dip</td>
+                </tr>
+                <tr>
+                    <td>Board Press</td>
+                </tr>
+                <tr>
+                    <td>Dumbbell Overhead Triceps Extension</td>
+                </tr>
+                <tr>
+                    <td>Cable Overhead Extension with Rope</td>
+                </tr>
+                <tr>
+                    <td>Single-Arm Cable Kick-Back</td>
+                </tr>
+                <tr>
+                    <td>Cable Push-Down</td>
+                </tr>
+                <tr>
+                    <td>Close-Grip Push-Up</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="workout-section">
+            <h2 style="color: white;">5. Chest</h2>
+            <br>
+            <table border="5" class="table1" style="margin-left: 70px;">
+                <tr>
+
+                    <th><u>CHEST</u></th>
+                </tr>
+                <tr>
+                    <td>Barbell Bench Press</td>
+                </tr>
+                <tr>
+                    <td>Dumbbell Bench Press</td>
+                </tr>
+                <tr>
+                    <td>Incline Bench Press</td>
+                </tr>
+                <tr>
+                    <td>Decline Press</td>
+                </tr>
+                <tr>
+                    <td>Machine Chest Press</td>
+                </tr>
+                <tr>
+                    <td>Push-Up</td>
+                </tr>
+                <tr>
+                    <td>Dumbbell Pull-Over</td>
+                </tr>
+                <tr>
+                    <td>Machine Fly</td>
+                </tr>
+                <tr>
+                    <td>Dip</td>
+                </tr>
+                <tr>
+                    <td>Chest Fly</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="workout-section">
+            <h2 style="color: white;">6. Back</h2>
+            <br>
+            <table border="5" class="table1" style="margin-left: 20px;">
+                <tr>
+                    <th><u>BACK</u></th>
+                </tr>
+                <tr>
+                    <td>Deadlift</td>
+                </tr>
+                <tr>
+                    <td>Bent-Over Row</td>
+                </tr>
+                <tr>
+                    <td>Pull-Up</td>
+                </tr>
+                <tr>
+                    <td>T-Bar Row</td>
+                </tr>
+                <tr>
+                    <td>Seated Row</td>
+                </tr>
+                <tr>
+                    <td>Single-Arm Smith Machine Row</td>
+                </tr>
+                <tr>
+                    <td>Single-Arm Dumbbell Lat Pull-Down</td>
+                </tr>
+                <tr>
+                    <td>Row</td>
+                </tr>
+                <tr>
+                    <td>Dumbbell Pull-Over</td>
+                </tr>
+                <tr>
+                    <td>Chest-Supported Row</td>
+                </tr>
+            </table>
+        </div>
+    </div> 
+    <div class="table-row">
+        <div class="workout-section">
+            <h2 style="color: white;">7. Bicep</h2>
+            <br>
+            <table border="5" class="table1" style="margin-left: 50px;">
+                <tr>
+                    <th><u>BICEP</u></th>
+                </tr>
+                <tr>
+                    <td>Barbell or EZ-Bar Curl</td>
+                </tr>
+                <tr>
+                    <td>Cable Curl</td>
+                </tr>
+                <tr>
+                    <td>Dumbbell Curl</td>
+                </tr>
+                <tr>
+                    <td>Chin-Up</td>
+                </tr>
+                <tr>
+                    <td>Reverse-Grip Barbell Row</td>
+                </tr>
+                <tr>
+                    <td>Hammer Curl</td>
+                </tr>
+                <tr>
+                    <td>Incline Curl</td>
+                </tr>
+                <tr>
+                    <td>Concentration Curl</td>
+                </tr>
+                <tr>
+                    <td>Preacher Curl</td>
+                </tr>
+                <tr>
+                    <td>Drag Curl</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="workout-section">
+            <h2 style="color: white;">8. Shoulders</h2>
+            <br>
+            <table border="5" class="table1" style="margin-left: 60px;">
+                <tr>
+                    <th><u>SHOULDERS</u></th>
+                </tr>
+                <tr>
+                    <td>Push-Press</td>
+                </tr>
+                <tr>
+                    <td>Military Press</td>
+                </tr>
+                <tr>
+                    <td>Rear Delt Row</td>
+                </tr>
+                <tr>
+                    <td>Seated Dumbbell Press</td>
+                </tr>
+                <tr>
+                    <td>Seated Barbell Press</td>
+                </tr>
+                <tr>
+                    <td>Upright Row</td>
+                </tr>
+                <tr>
+                    <td>Arnold Press</td>
+                </tr>
+                <tr>
+                    <td>Rear Delt Fly</td>
+                </tr>
+                <tr>
+                    <td>Lateral Raise</td>
+                </tr>
+                <tr>
+                    <td>Front Raise</td>
+                </tr>
+            </table>
+        </div>
+    </div> 
 </div>
-    <br>
-    <div>
-        <div id="chest">
-        <h2 style="color: white;">5. Chest</h2>
-        <br>
-        <table border="5" class="table1">
-            <tr>
-
-                <th><u>CHEST</u></th>
-            </tr>
-            <tr>
-                <td>Barbell Bench Press</td>
-            </tr>
-            <tr>
-                <td>Dumbbell Bench Press</td>
-            </tr>
-            <tr>
-                <td>Incline Bench Press</td>
-            </tr>
-            <tr>
-                <td>Decline Press</td>
-            </tr>
-            <tr>
-                <td>Machine Chest Press</td>
-            </tr>
-            <tr>
-                <td>Push-Up</td>
-            </tr>
-            <tr>
-                <td>Dumbbell Pull-Over</td>
-            </tr>
-            <tr>
-                <td>Machine Fly</td>
-            </tr>
-            <tr>
-                <td>Dip</td>
-            </tr>
-            <tr>
-                <td>Chest Fly</td>
-            </tr>
-        </table>
-    </div>
-
-            
+</div>
 </div>
 <br>
-<div>
-    <div id="back">
-    <h2 style="color: white;">6. Back</h2>
 <br>
-<table border="5" class="table1">
-    <tr>
-        <th><u>BACK</u></th>
-    </tr>
-    <tr>
-        <td>Deadlift</td>
-    </tr>
-    <tr>
-        <td>Bent-Over Row</td>
-    </tr>
-    <tr>
-        <td>Pull-Up</td>
-    </tr>
-    <tr>
-        <td>T-Bar Row</td>
-    </tr>
-    <tr>
-        <td>Seated Row</td>
-    </tr>
-    <tr>
-        <td>Single-Arm Smith Machine Row</td>
-    </tr>
-    <tr>
-        <td>Single-Arm Dumbbell Lat Pull-Down</td>
-    </tr>
-    <tr>
-        <td>Row</td>
-    </tr>
-    <tr>
-        <td>Dumbbell Pull-Over</td>
-    </tr>
-    <tr>
-        <td>Chest-Supported Row</td>
-    </tr>
-</table>
-</div>
-
-</div>
-</div>
-</div>
-<br>
-<br>
-<div class="container">
-    <div class="table-container">
-    <br>
-    <div>
-        <div id="Bicep">
-        <h2 style="color: white;">7. Bicep</h2>
-<br>
-<table border="5" class="table1">
-    <tr>
-        <th><u>BICEP</u></th>
-    </tr>
-    <tr>
-        <td>Barbell or EZ-Bar Curl</td>
-    </tr>
-    <tr>
-        <td>Cable Curl</td>
-    </tr>
-    <tr>
-        <td>Dumbbell Curl</td>
-    </tr>
-    <tr>
-        <td>Chin-Up</td>
-    </tr>
-    <tr>
-        <td>Reverse-Grip Barbell Row</td>
-    </tr>
-    <tr>
-        <td>Hammer Curl</td>
-    </tr>
-    <tr>
-        <td>Incline Curl</td>
-    </tr>
-    <tr>
-        <td>Concentration Curl</td>
-    </tr>
-    <tr>
-        <td>Preacher Curl</td>
-    </tr>
-    <tr>
-        <td>Drag Curl</td>
-    </tr>
-</table>
-</div>
-
- 
-</div>
-    <br>
-    <div>
-        <div id="Shoulders">
-        
-
-        <h2 style="color: white;">8. Shoulders</h2>
-<br>
-<table border="5" class="table1">
-    <tr>
-        <th><u>SHOULDERS</u></th>
-    </tr>
-    <tr>
-        <td>Push-Press</td>
-    </tr>
-    <tr>
-        <td>Military Press</td>
-    </tr>
-    <tr>
-        <td>Rear Delt Row</td>
-    </tr>
-    <tr>
-        <td>Seated Dumbbell Press</td>
-    </tr>
-    <tr>
-        <td>Seated Barbell Press</td>
-    </tr>
-    <tr>
-        <td>Upright Row</td>
-    </tr>
-    <tr>
-        <td>Arnold Press</td>
-    </tr>
-    <tr>
-        <td>Rear Delt Fly</td>
-    </tr>
-    <tr>
-        <td>Lateral Raise</td>
-    </tr>
-    <tr>
-        <td>Front Raise</td>
-    </tr>
-</table>
-</div>
-
-
-</div>
-</div>
-</div>
 
 {% endblock %}
