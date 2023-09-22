@@ -1,0 +1,20 @@
+{% extends "fitness/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<form method="post" action="{% url 'filter_trainers' %}">
+    {% csrf_token %}
+    <label for="specialization">Select Specialization:</label>
+    <select id="specialization" name="specialization" required>
+        <option value="" disabled selected>Select Specialization</option>
+        {% for specialization in specializations %}
+        <option value="{{ specialization }}">{{ specialization }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+    <input type="submit" value="Filter Trainers">
+</form>
+
+{% endblock %}

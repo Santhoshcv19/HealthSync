@@ -1,0 +1,32 @@
+{% extends "fitness/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+<br><br><br><br><br><br>
+<h1 style="color: white;">List of Trainers</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Specialization&nbsp;&nbsp;</th>
+            <th>Contact</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for trainer in trainers_data %}
+            <tr>
+                <td>{{ trainer.name }}</td>
+                <td>{{ trainer.specialization }}</td>
+                <td>{{ trainer.contact }}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ trainer.code }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+{% endblock %}

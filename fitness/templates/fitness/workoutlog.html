@@ -1,0 +1,42 @@
+{% extends "fitness/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br><br><br><br>
+    <h2 style="color: white">Log Your Workouts Here</h2>
+    <h3>{{ error }}</h3>
+    <p><i>Note: Enter the weight in kgs</i></p>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.Workout_name.id_for_label }}">Workout Name:&nbsp;</label>
+            {{ form.Workout_name }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.weight.id_for_label }}">Weight (in kgs):&nbsp;</label>
+            {{ form.weight }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.sets.id_for_label }}" style="margin-left: 2px;">Sets:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            {{ form.sets }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.reps.id_for_label }}" style="margin-left: 2px;">Reps:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            {{ form.reps }}
+        </div>
+        <button type="submit" class="btn btn-secondary">Add</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{% url 'log' %}" style="text-decoration: none; color: black;" class="btn btn-secondary">Check your workout log history here</a>
+    </form>
+    <br>
+    <br>
+    <h4><a href="{% url 'workoutlogging' %}" style="color: white;">Click Here</a> to get our recommendation on different workout splits</h4>
+</div>
+
+
+
+{% endblock %}

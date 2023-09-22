@@ -28,9 +28,12 @@ urlpatterns = [
     path('bodyfat',views.bodyfat, name='bodyfat'),
     path('tips',views.tips, name='tips'),
     path('mental',views.mental, name='mental'),
-    path('ctrainer',views.ctrainer, name='ctrainer'),
+    path('trainers', views.trainers, name='trainers'),
     path('location',views.location, name='location'),
     path('routine', views.routine, name='routine'),
+    path('filter_trainers', views.filter_trainers, name='filter_trainers'),
+    path('workoutlog', views.workoutlog, name='workoutlog'),
+    path('log', views.log, name='log'),
     #Auth
     path('signup', views.SignUp.as_view(), name='signup'),
     path('login', auth_views.LoginView.as_view(), name='login'),

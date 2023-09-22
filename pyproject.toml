@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "sih-fitness-project"
+version = "0.1.0"
+description = ""
+authors = ["Santhosh <santhoshcv2004@gmail.com>"]
+readme = "README.md"
+packages = [{include = "sih_fitness_project"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

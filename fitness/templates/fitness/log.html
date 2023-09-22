@@ -1,0 +1,34 @@
+{% extends "fitness/base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <br>
+    <br><br><br><br><br><br>
+  <h2 style="color: white;">Please select the date for your workout log history</h2>
+  <form method="get">
+    {{ date_form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+  <br>
+  {% if selected_date %}
+    <h2 style="color: white;">Workouts done on {{ selected_date }}</h2>
+    <ul>
+      {% for workout in workouts %}
+        <li>
+          <strong>{{ workout.Workout_name }}</strong><br>
+          Weight (in Kgs): {{ workout.weight }}<br>
+          Sets: {{ workout.sets }}<br>
+          Reps: {{ workout.reps }}<br>
+        <br>
+        </li>
+      {% empty %}
+        <p>No workouts found for this date.</p>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <h4><a href="{% url 'workoutlog' %}"><button type="button" class="btn btn-outline-primary btn-sm button" style="width: 100px; height: 50px;">Add More</button></a></h4>
+  </div>
+{% endblock %}

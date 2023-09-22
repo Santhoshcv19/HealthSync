@@ -4,16 +4,17 @@
 
 {% block content %}
 
-<div class="wallpaper-home" style="margin-left:0%; position: relative;">
-  <img src="{% static "fitness/ahsan.jpg" %}" style="width: 100%; height: 660px;">
+<div class="hero d-flex flex-column justify-content-center align-items-center" style="margin-left:0%; position: relative;">
+  <img src="{% static "fitness/hero-bg.jpg" %}" style="width: 100%">
 </div>
 <br>
 <br>
     <div style="background-color: black; color: white;" id="About" class="container">
         <h1 style="color: white;">About</h1>
-        <p>Welcome to HealthSync, your one-stop destination for all your fitness needs. Whether you're just starting your fitness journey or you're a certified trainer looking to help others, we've got you covered with a range of innovative functionalities designed to assist you in achieving your fitness goals.
+        <p style="color: white;">Welcome to HealthSync, your one-stop destination for all your fitness needs. Whether you're just starting your fitness journey or you're a certified trainer looking to help others, we've got you covered with a range of innovative functionalities designed to assist you in achieving your fitness goals.
 
             <h3>For Fitness Enthusiasts</h3>
+            <br>
             {% if user.is_authenticated %}
             <h4><a href="{% url 'supplement' %}" style="color: white;">1. Supplement Page</a></h4>
             {% else %}
@@ -39,7 +40,7 @@
             <br>
             <br>
             {% if user.is_authenticated %}
-            <h4><a href="{% url 'workoutlogging' %}" style="color: white;">4. Workout Logging</a></h4>
+            <h4><a href="{% url 'workoutlog' %}" style="color: white;">4. Workout Logging</a></h4>
             {% else %}
             <h4><a href="{% url 'signup' %}" style="color: white;">4. Workout Logging</a></h4>
             {% endif %}
@@ -63,7 +64,7 @@
             <br>
             <br>
             {% if user.is_authenticated %}
-            <h4><a href="{% url 'ctrainer' %}" style="color: white;">7. Certified Trainer</a></h4>
+            <h4><a href="{% url 'trainers' %}" style="color: white;">7. Certified Trainer</a></h4>
             {% else %}
             <h4><a href="{% url 'signup' %}" style="color: white;">7. Certified Trainer</a></h4>
             {% endif %}
@@ -79,6 +80,7 @@
             <br>
             <br>
             <h3>Trainers Page</h3>
+            <br>
             <h4>1. Client Management</h4>
             Certified trainers can manage all their clients and their training histories in one place. Keep detailed records of client progress and customize workout plans.
             <br>
@@ -89,7 +91,7 @@
             <br>
             Whether you're a fitness enthusiast or a certified trainer, HealthSync is your trusted partner in achieving fitness success. Join us today and take the first step towards a healthier, stronger you!</p>
     </div>
-    <footer class="text-center text-lg-start bg-primary text-muted" id="Contact" style="background-color: black; color: white;">
+    <footer class="lked" id="Contact" style="background-color: #171819">
         <!-- Section: Social media -->
         <br>
         <!-- Section: Social media -->
@@ -117,10 +119,10 @@
                 <br>
                 <br>
                 <p>
-                  <a href="#!" class="text-reset">Jefferson</a>
+                  <a href="https://www.linkedin.com/in/jefferson-kingston/" target="_blank" class="text-reset" style="color: #909090;">Jefferson</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">Bharat</a>
+                  <a href="https://www.linkedin.com/in/bharat-p-88b15b1b7/" target="_blank" class="text-reset">Bharat</a>
                 </p>
               </div>
               <!-- Grid column -->
@@ -131,10 +133,10 @@
                 <br>
                 <br>
                 <p>
-                  <a href="#!" class="text-reset">Keerthika</a>
+                  <a href="https://www.linkedin.com/in/keerthika-devi-s-1b3517221" target="_blank" class="text-reset">Keerthika</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">Mahalakshmi</a>
+                  <a href="https://www.linkedin.com/in/mahalakshmi-s-761b2b220/" target="_blank" class="text-reset">Mahalakshmi</a>
                 </p>
               </div>
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="color: white;">
@@ -142,17 +144,16 @@
                 <br>
                 <br>
                 <p>
-                  <a href="#!" class="text-reset">Sundar</a>
+                  <a href="https://www.linkedin.com/in/sundar-karthikeyan-arunkumar-6744ba251/" target="_blank" class="text-reset">Sundar</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-reset">Santhosh CV</a>
+                  <a href="https://www.linkedin.com/in/santhosh-cv-91868527a/" target="_blank" class="text-reset">Santhosh CV</a>
                 </p>
               </div>
               <!-- Grid column -->
       
               <!-- Grid column -->
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="color: white;">
-                <!-- Links -->
+              <!-- <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="color: white;">
                 <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
                 <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
                 <p>
@@ -161,7 +162,7 @@
                 </p>
                 <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
                 <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-              </div>
+              </div> -->
               <!-- Grid column -->
             </div>
             <!-- Grid row -->
@@ -171,8 +172,8 @@
       
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2021 Copyright:
-          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+          © 2023 Copyright:
+          <a class="text-reset fw-bold" href="{% url 'home' %}" style="color: #279EFF;">HealthSync</a>
         </div>
         <!-- Copyright -->
     </footer>
