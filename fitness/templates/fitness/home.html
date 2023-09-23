@@ -61,7 +61,7 @@
 <br>
     <div style="background-color: black; color: white;" id="About" class="container">
         <h1 style="color: white;">About</h1>
-        <p style="color: white;">Welcome to HealthSync, your one-stop destination for all your fitness needs. Whether you're just starting your fitness journey or you're a certified trainer looking to help others, we've got you covered with a range of innovative functionalities designed to assist you in achieving your fitness goals.
+        <p style="color: white;">Welcome to HealthSync, your one-stop destination for all your fitness needs. Whether you're just starting your fitness journey or you're a certified trainer looking to help others, we've got you covered with a range of innovative functionalities designed to assist you in achieving your goals.
 
             <h3>For Fitness Enthusiasts</h3>
             <br>
@@ -74,25 +74,17 @@
             <br>
             <br>
             {% if user.is_authenticated %}
-            <h4><a class="navbar-brand" href="{% url 'nutrient' %}"><span class="sort-indicator"></span> Nutrition Tracking</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'bodyfat' %}"><span class="sort-indicator"></span> Your Virtual AI Trainer</a></h4>
             {% else %}
-            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Nutrition Tracking</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Your Virtual AI Trainer</a></h4>
             {% endif %}
-            Track your daily food intake and receive a detailed breakdown of macronutrients and calorie intake. Make informed decisions about your diet to fuel your fitness journey effectively.
+            Switch On your camera and we will assist you in doing your exercise better and count it easily.
             <br>
             <br>
             {% if user.is_authenticated %}
-            <h4><a class="navbar-brand" href="{% url 'bodyfat' %}"><span class="sort-indicator"></span> Body Fat Percentage Calculation</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'workoutlog' %}"><span class="sort-indicator"></span> Workout Planner</a></h4>
             {% else %}
-            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Body Fat Percentage Calculation</a></h4>
-            {% endif %}
-            Upload your image, and our algorithm will calculate your body fat percentage, providing you with valuable insights into your progress.
-            <br>
-            <br>
-            {% if user.is_authenticated %}
-            <h4><a class="navbar-brand" href="{% url 'workoutlog' %}"><span class="sort-indicator"></span> Workout Logging</a></h4>
-            {% else %}
-            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Workout Logging</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Workout Planner</a></h4>
             {% endif %}
             Easily log your workouts and monitor your progress over time. We can even suggest workout splits based on your available days per week, helping you plan your fitness routine effectively.
             <br>
@@ -122,17 +114,25 @@
             <br>
             <br>
             {% if user.is_authenticated %}
-            <h4><a class="navbar-brand" href="{% url 'location' %}"><span class="sort-indicator"></span> Gym Locator</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'location' %}"><span class="sort-indicator"></span> Fitness Center Near Me</a></h4>
             {% else %}
-            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Gym Locator</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Fitness Center Near Me</a></h4>
             {% endif %}
             Find nearby gyms and fitness centers, making it easy to access the facilities you need to stay on track with your fitness routine.
             <br>
             <br>
-            <h3>Trainers Page</h3>
+            {% if user.is_authenticated %}
+            <h4><a class="navbar-brand" href="{% url 'nutrient' %}"><span class="sort-indicator"></span> Nutrition Tracking</a></h4>
+            {% else %}
+            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Nutrition Tracking</a></h4>
+            {% endif %}
+            Track your daily food intake and receive a detailed breakdown of macronutrients and calorie intake. Make informed decisions about your diet to fuel your fitness journey effectively.
+            <br>
+            <br>
+            <h3>For Trainers</h3>
             <br>
             {% if user.is_authenticated %}
-            <h4><a class="navbar-brand" href="{% url 'certify' %}"><span class="sort-indicator"></span> Client Management</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'cmgmt' %}"><span class="sort-indicator"></span> Client Management</a></h4>
             {% else %}
             <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Client Management</a></h4>
             {% endif %}
@@ -140,14 +140,26 @@
             <br>
             <br>
             {% if user.is_authenticated %}
-            <h4><a class="navbar-brand" href="{% url 'certify' %}"><span class="sort-indicator"></span> Time Table Creation</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'tt' %}"><span class="sort-indicator"></span> Day Organizer</a></h4>
             {% else %}
-            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Time Table Creation</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Day Organizer</a></h4>
             {% endif %}
             Create and manage timetables for your clients, ensuring that everyone receives personalized training schedules to help them reach their fitness goals efficiently.
             <br>
             <br>
-            Whether you're a fitness enthusiast or a certified trainer, HealthSync is your trusted partner in achieving fitness success. Join us today and take the first step towards a healthier, stronger you!</p>
+            <h3>For Brands</h3>
+            <br>
+            {% if user.is_authenticated %}
+            <h4><a class="navbar-brand" href="{% url 'supplement' %}"><span class="sort-indicator"></span> Online Store</a></h4>
+            {% else %}
+            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Online Store</a></h4>
+            {% endif %}
+            Your One Stop destination to reach all the people of India where you can sell your products at the best price and compete with fellow brands.
+            <br>
+            <br>
+            {% if not user.is_authenticated %}
+              <a href="{% url 'signup' %}" class="btn custom-btn bg-color mt-3" data-aos="fade-up" data-aos-delay="300">Become a member</a>
+              {% endif %}</p>
     </div>
     <footer class="lked" id="Contact" style="background-color: #171819;">
         <br>
@@ -162,7 +174,7 @@
           <a class="navbar-brand smoothScroll" href="https://www.linkedin.com/in/santhosh-cv-91868527a/" target="_blank" style="margin-left: 20px; font-size: medium;">Santhosh CV</a>
         </div>
         <br>
-        <p style="text-align: center; color: white;">There are 101 reasons to be stressed. FItness shouldn't be one</p>
+        <p style="text-align: center; color: white;">There are 101 reasons to be stressed. Fitness shouldn't be one</p>
         <div class="text-center" style="background-color: rgba(0, 0, 0, 0.05);">
           © 2023 Copyright:
           <a class="text-reset fw-bold" href="{% url 'home' %}" style="color: #279EFF;">HealthSync</a>
