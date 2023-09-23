@@ -26,6 +26,7 @@ urlpatterns = [
     path('',views.home, name='home'),
     path('workoutlogging', views.workoutlogging, name='workoutlogging'),
     path('nutrient',views.nutrient, name='nutrient'),
+    path('calorie_tracker',views.calorie_tracker, name='calorie_tracker'),
     path('supplement',views.supplement, name='supplement'),
     path('cart', views.cart, name='cart'),
     path('add_to_cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),

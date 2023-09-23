@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect,  get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from .forms import WorkoutForm, Workoutlogform, DateForm, FileUploadForm
-from .models import Workout, Product, CartItem
+from .models import Workout, Product, CartItem, FoodItem, CalorieIntake
+from datetime import date
 import csv
 import datetime
 import pytz
@@ -17,8 +19,32 @@ def workoutlogging(request):
 def routine(request):
     return render(request, "fitness/routine.html")
 
+
+@login_required
 def nutrient(request):
-    return render(request, "fitness/nutrient.html")
+    if request.method == 'POST':
+        food_item_id = request.POST['food_item']
+        quantity = int(request.POST['quantity'])
+        food_item = FoodItem.objects.get(pk=food_item_id)
+        calorie_intake = (food_item.calories_per_100g / 100) * quantity
+
+        CalorieIntake.objects.create(
+            user=request.user,
+            date=date.today(),
+            food_item=food_item,
+            quantity=quantity
+        )
+        return redirect('calorie_tracker')
+
+    food_items = FoodItem.objects.all()
+    return render(request, 'fitness/nutrient.html', {'food_items': food_items})
+
+@login_required
+def calorie_tracker(request):
+    today = date.today()
+    calorie_intake = CalorieIntake.objects.filter(user=request.user, date=today).select_related('food_item')
+    total_calories = sum((item.food_item.calories_per_100g / 100) * item.quantity for item in calorie_intake)
+    return render(request, 'fitness/calorie_tracker.html', {'calorie_intake': calorie_intake, 'total_calories': total_calories})
 
 def supplement(request):
     products = Product.objects.all()

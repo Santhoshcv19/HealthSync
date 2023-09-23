@@ -33,3 +33,14 @@ class CartItem(models.Model):
 class UploadedFile(models.Model):
     file = models.FileField(upload_to='uploads/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+class FoodItem(models.Model):
+    name = models.CharField(max_length=100)
+    calories_per_100g = models.PositiveIntegerField()  # Calories per 100 grams
+    unit_name = models.CharField(max_length=20, default='grams')
+
+class CalorieIntake(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateField()
+    food_item = models.ForeignKey(FoodItem, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=100)

@@ -1,0 +1,22 @@
+{% extends "fitness/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <br><br>
+<h1>Calorie Tracker</h1>
+    <h2>Today's Intake</h2>
+    <ul>
+        {% for intake in calorie_intake %}
+            <li>{{ intake.food_item.name }} - {{ intake.food_item.calories }} calories</li>
+        {% empty %}
+            <li>No items added today.</li>
+        {% endfor %}
+    </ul>
+    <p>Total Calories: {{ total_calories }}</p>
+</div>
+
+{% endblock %}

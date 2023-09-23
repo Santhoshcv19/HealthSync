@@ -6,9 +6,22 @@
 
 <div class="container">
     <br>
-    <br><br><br><br>
-    <h1 style="color: white; text-align: center;">Track Your Nutrients Everyday!</h1>
-    <h3 style="text-align: center;">Under Construction</h3>
+    <br><br>
+    <h1>Add Food Item</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="food_item">Select Food Item:</label>
+        <select name="food_item">
+            {% for food_item in food_items %}
+                <option value="{{ food_item.id }}">{{ food_item.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="quantity">Quantity (grams):</label>
+        <input type="number" name="quantity" value="100" min="1">
+        <br>
+        <button type="submit">Add</button>
+    </form>
 </div>
 
 {% endblock %}
