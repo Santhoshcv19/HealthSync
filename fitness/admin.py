@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MacroNutrients, Workout, Product, CartItem
+from .models import MacroNutrients, Workout, Product, CartItem, UploadedFile
 
 admin.site.register(MacroNutrients)
 
@@ -10,3 +10,5 @@ class WorkoutAdmin(admin.ModelAdmin):
 admin.site.register(Product)
 
 admin.site.register(CartItem)
+
+admin.site.register(UploadedFile)

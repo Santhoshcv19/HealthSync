@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect,  get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.forms import UserCreationForm
-from .forms import WorkoutForm, Workoutlogform, DateForm
+from .forms import WorkoutForm, Workoutlogform, DateForm, FileUploadForm
 from .models import Workout, Product, CartItem
 import csv
 import datetime
@@ -161,6 +161,16 @@ def log(request):
         'workouts': workouts,
     })        
 
+
+def certify(request):
+    if request.method == 'POST':
+        form = FileUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('certify')  # Redirect to a file list page after successful upload
+    else:
+        form = FileUploadForm()
+    return render(request, 'fitness/certify.html', {'form': form})
 
 def cmgmt(request):
     return render(request, 'fitness/cmgmt.html')

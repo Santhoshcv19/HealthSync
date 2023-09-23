@@ -43,6 +43,7 @@ urlpatterns = [
     path('log', views.log, name='log'),
     path('cmgmt', views.cmgmt, name='cmgmt'),
     path('tt', views.tt, name='tt'),
+    path('certify', views.certify, name='certify'),
     #Auth
     path('signup', views.SignUp.as_view(), name='signup'),
     path('login', auth_views.LoginView.as_view(), name='login'),

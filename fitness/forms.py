@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Workout
+from .models import Workout, UploadedFile
 
 class WorkoutForm(forms.Form):
     days = forms.ChoiceField(choices=[('select', 'Select'), ('one', '1'), ('two', '2'), ('three', '3'), ('four', '4'), ('five', '5'), ('six', '6'), ('seven', '7')])
@@ -15,3 +15,8 @@ class DateForm(forms.Form):
         label='Select a Date',
         widget=forms.TextInput(attrs={'type': 'date'}),
     )
+
+class FileUploadForm(forms.ModelForm):
+    class Meta:
+        model = UploadedFile
+        fields = ['file']
