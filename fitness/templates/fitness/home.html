@@ -131,11 +131,19 @@
             <br>
             <h3>Trainers Page</h3>
             <br>
-            <h4><span class="sort-indicator"></span> Client Management</h4>
+            {% if user.is_authenticated %}
+            <h4><a class="navbar-brand" href="{% url 'cmgmt' %}"><span class="sort-indicator"></span> Client Management</a></h4>
+            {% else %}
+            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Client Management</a></h4>
+            {% endif %}
             Certified trainers can manage all their clients and their training histories in one place. Keep detailed records of client progress and customize workout plans.
             <br>
             <br>
-            <h4><span class="sort-indicator"></span> Timetable Creation</h4>
+            {% if user.is_authenticated %}
+            <h4><a class="navbar-brand" href="{% url 'tt' %}"><span class="sort-indicator"></span> Time Table Creation</a></h4>
+            {% else %}
+            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Client Management</a></h4>
+            {% endif %}
             Create and manage timetables for your clients, ensuring that everyone receives personalized training schedules to help them reach their fitness goals efficiently.
             <br>
             <br>

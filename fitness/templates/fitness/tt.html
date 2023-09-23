@@ -1,0 +1,102 @@
+{% extends "fitness/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+            gap: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Calendar Header */
+        .calendar-header {
+            grid-column: span 7;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Day of the Week Labels */
+        .day-label {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Calendar Days */
+        .calendar-day {
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: #000000;
+        }
+
+        /* Highlighted Day */
+        .highlight {
+            background-color: #007bff;
+            color: white;
+        }
+</style>
+<div class="container">
+    <br>
+    <br><br>
+    <h1 style="text-align: center;">Time Table Page</h1>
+    <div class="calendar">
+        <!-- Calendar Header -->
+        <div class="calendar-header">
+            September 2023
+        </div>
+
+        <!-- Day of the Week Labels -->
+        <div class="day-label">Sun</div>
+        <div class="day-label">Mon</div>
+        <div class="day-label">Tue</div>
+        <div class="day-label">Wed</div>
+        <div class="day-label">Thu</div>
+        <div class="day-label">Fri</div>
+        <div class="day-label">Sat</div>
+
+        <!-- Calendar Days -->
+        <div class="calendar-day">27</div>
+        <div class="calendar-day">28</div>
+        <div class="calendar-day">29</div>
+        <div class="calendar-day">30</div>
+        <div class="calendar-day">31</div>
+        <div class="calendar-day">1</div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day">3</div>
+        <div class="calendar-day">4</div>
+        <div class="calendar-day">5</div>
+        <div class="calendar-day">6</div>
+        <div class="calendar-day">7</div>
+        <div class="calendar-day">8</div>
+        <div class="calendar-day">9</div>
+        <div class="calendar-day">10</div>
+        <div class="calendar-day">11</div>
+        <div class="calendar-day">12</div>
+        <div class="calendar-day">13</div>
+        <div class="calendar-day">14</div>
+        <div class="calendar-day">15</div>
+        <div class="calendar-day">16</div>
+        <div class="calendar-day">17</div>
+        <div class="calendar-day">18</div>
+        <div class="calendar-day">19</div>
+        <div class="calendar-day">20</div>
+        <div class="calendar-day">21</div>
+        <div class="calendar-day">22</div>
+        <div class="calendar-day highlight">23</div>
+        <div class="calendar-day">24</div>
+        <div class="calendar-day">25</div>
+        <div class="calendar-day">26</div>
+        <div class="calendar-day">27</div>
+        <div class="calendar-day">28</div>
+        <div class="calendar-day">29</div>
+        <div class="calendar-day">30</div>
+    </div>
+</div>
+
+{% endblock %}

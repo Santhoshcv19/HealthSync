@@ -27,57 +27,31 @@
     <h2 style="color: white; text-align: center;">How are you feeling Today?</h2>
     <br>
     
-    <p style="font-size:50px" class="range" id="motivationEmoji" onclick="showMotivationImage()"><button style="background-color: black; border: none;">&#128534;</button></p>
-    <p style="font-size:50px" class="range" id="motivationEmoji2" onclick="showMotivationImage2()"><button style="background-color: black; border: none;">&#128577;</button></p>
-    <p style="font-size:50px" class="range" id="motivationEmoji3" onclick="showMotivationImage3()"><button style="background-color: black; border: none;">&#128528;</button></p>
-    <p style="font-size:50px" class="range" id="motivationEmoji4" onclick="showMotivationImage4()"><button style="background-color: black; border: none;">&#128512;</button></p>
-    <p style="font-size:50px" class="range" id="motivationEmoji5" onclick="showMotivationImage5()"><button style="background-color: black; border: none;">&#128522;</button></p>
+    <p style="font-size:50px" class="range motivation-button" data-image="motivationImage"><button style="background-color: black; border: none;">&#128534;</button></p>
+    <p style="font-size:50px" class="range motivation-button" data-image="motivationImage2"><button style="background-color: black; border: none;">&#128577;</button></p>
+    <p style="font-size:50px" class="range motivation-button" data-image="motivationImage3"><button style="background-color: black; border: none;">&#128528;</button></p>
+    <p style="font-size:50px" class="range motivation-button" data-image="motivationImage4"><button style="background-color: black; border: none;">&#128512;</button></p>
+    <p style="font-size:50px" class="range motivation-button" data-image="motivationImage5"><button style="background-color: black; border: none;">&#128522;</button></p>
     <img id="motivationImage" src="{% static "fitness/ahsmen.jpg" %}" alt="Motivation Image" style="display: none; height: 350px; width: 300px; margin-left: 375px;">
     <img id="motivationImage2" src="{% static "fitness/ahsmelan.jpg" %}" alt="Motivation Image" style="display: none; height: 350px; width: 300px; margin-left: 375px;">
     <img id="motivationImage3" src="{% static "fitness/neutral.webp" %}" alt="Motivation Image" style="display: none; height: 350px; width: 300px; margin-left: 375px;">
     <img id="motivationImage4" src="{% static "fitness/happy2.jfif" %}" alt="Motivation Image" style="display: none; height: 350px; width: 300px; margin-left: 375px;">
     <img id="motivationImage5" src="{% static "fitness/happy1.jfif" %}" alt="Motivation Image" style="display: none; height: 350px; width: 300px; margin-left: 375px;">
     <script>
-        function showMotivationImage() {
-            var image = document.getElementById("motivationImage");
-            if (image.style.display === "none") {
+        document.addEventListener("DOMContentLoaded", function() {
+        var buttons = document.querySelectorAll(".motivation-button");
+        buttons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                var imageId = this.getAttribute("data-image");
+                var image = document.getElementById(imageId);
+                var allImages = document.querySelectorAll("img[id^='motivationImage']");
+                allImages.forEach(function(img) {
+                    img.style.display = "none";
+                });
                 image.style.display = "block";
-            } else {
-                image.style.display = "none";
-            }
-        }
-        function showMotivationImage2() {
-            var image = document.getElementById("motivationImage2");
-            if (image.style.display === "none") {
-                image.style.display = "block";
-            } else {
-                image.style.display = "none";
-            }
-        }
-        function showMotivationImage3() {
-            var image = document.getElementById("motivationImage3");
-            if (image.style.display === "none") {
-                image.style.display = "block";
-            } else {
-                image.style.display = "none";
-            }
-        }
-        function showMotivationImage4() {
-            var image = document.getElementById("motivationImage4");
-            if (image.style.display === "none") {
-                image.style.display = "block";
-            } else {
-                image.style.display = "none";
-            }
-        }
-        function showMotivationImage5() {
-            var image = document.getElementById("motivationImage5");
-            if (image.style.display === "none") {
-                image.style.display = "block";
-            } else {
-                image.style.display = "none";
-            }
-        }
+            });
+        });
+    });
     </script>
     
 </div>

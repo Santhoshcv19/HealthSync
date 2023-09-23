@@ -162,6 +162,10 @@ def log(request):
     })        
 
 
+def cmgmt(request):
+    return render(request, 'fitness/cmgmt.html')
 
+def tt(request):
+    return render(request, 'fitness/tt.html')
 
 

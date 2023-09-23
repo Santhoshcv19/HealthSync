@@ -41,6 +41,8 @@ urlpatterns = [
     path('filter_trainers', views.filter_trainers, name='filter_trainers'),
     path('workoutlog', views.workoutlog, name='workoutlog'),
     path('log', views.log, name='log'),
+    path('cmgmt', views.cmgmt, name='cmgmt'),
+    path('tt', views.tt, name='tt'),
     #Auth
     path('signup', views.SignUp.as_view(), name='signup'),
     path('login', auth_views.LoginView.as_view(), name='login'),
