@@ -132,7 +132,7 @@
             <h3>Trainers Page</h3>
             <br>
             {% if user.is_authenticated %}
-            <h4><a class="navbar-brand" href="{% url 'cmgmt' %}"><span class="sort-indicator"></span> Client Management</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'certify' %}"><span class="sort-indicator"></span> Client Management</a></h4>
             {% else %}
             <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Client Management</a></h4>
             {% endif %}
@@ -140,9 +140,9 @@
             <br>
             <br>
             {% if user.is_authenticated %}
-            <h4><a class="navbar-brand" href="{% url 'tt' %}"><span class="sort-indicator"></span> Time Table Creation</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'certify' %}"><span class="sort-indicator"></span> Time Table Creation</a></h4>
             {% else %}
-            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Client Management</a></h4>
+            <h4><a class="navbar-brand" href="{% url 'signup' %}"><span class="sort-indicator"></span> Time Table Creation</a></h4>
             {% endif %}
             Create and manage timetables for your clients, ensuring that everyone receives personalized training schedules to help them reach their fitness goals efficiently.
             <br>
