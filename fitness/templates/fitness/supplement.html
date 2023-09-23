@@ -4,10 +4,119 @@
 
 {% block content %}
 
+<style>
+
+/* Style each product item in the list */
+.product-item {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Style the product image */
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style the product details */
+.product-details h2 {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #f00;
+    font-size: 1.2em;
+}
+.cart-link {
+    font-size: 24px; /* Adjust the icon size */
+    color: #ffffff; /* Adjust the icon color */
+}
+
+/* Add a hover effect for the cart link */
+.cart-link:hover {
+    color: #007bff; /* Adjust the hover color */
+    text-decoration: none;
+}
+</style>
+
 <div class="container">
     <br>
     <br><br>
-    <h1 style="color: white; text-align: center;">Supplement Page</h1>
+    <div class="row no-gutters">
+    <div class="cart-link row no-gutters" style="margin-top: 20px;">
+        <a href="{% url 'cart' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            
+        </a>
+        <p style="margin-top: 15px;">Cart</p>
+    </div>
+    <h1 style="margin-left: 240px;">Product Catalog</h1>
 </div>
+<form id="product-type-form">
+    <label for="product-type">Select Product Type:</label>
+    <select id="product-type" name="product-type">
+        <option value="all" class="btn btn-outline-primary">All Products</option>
+        <option value="Protein" class="btn btn-outline-primary">Protein</option>
+        <option value="Gainer" class="btn btn-outline-primary">Gainers</option>
+        <option value="Pre_post_workout" class="btn btn-outline-primary">Pre/Post Workout</option>
+    </select>
+</form>
+  <ul id="product-list">
+    {% for product in products %}
+    <li class="product-item" data-type="{{ product.type }}">
+        <div class="product-image">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}">
+        </div>
+        <div class="product-details">
+            <h2 style="color: black;">{{ product.title }}</h2>
+            <p style="color: black;">{{ product.description }}</p>
+            <p class="product-price">₹{{ product.price }}</p>
+            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-outline-primary btn-sm button">Add to Cart</a>
+        </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script>
+    // Get the product type selection dropdown element
+    const productTypeDropdown = document.getElementById("product-type");
+
+    // Get the product list container
+    const productList = document.getElementById("product-list");
+
+    // Add an event listener to the dropdown for changes
+    productTypeDropdown.addEventListener("change", () => {
+        const selectedType = productTypeDropdown.value;
+
+        // Loop through product items and show/hide based on the selected type
+        const productItems = productList.querySelectorAll(".product-item");
+        productItems.forEach((item) => {
+            const itemType = item.getAttribute("data-type");
+            if (selectedType === "all" || selectedType === itemType) {
+                item.style.display = "inline-block"; // Show the item
+            } else {
+                item.style.display = "none"; // Hide the item
+            }
+        });
+    });
+
+    // Trigger the change event to initially display all products
+    productTypeDropdown.dispatchEvent(new Event("change"));
+</script>
+
+
+
 
 {% endblock %}

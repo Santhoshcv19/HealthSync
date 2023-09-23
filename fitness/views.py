@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,  get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.forms import UserCreationForm
 from .forms import WorkoutForm, Workoutlogform, DateForm
-from .models import Workout
+from .models import Workout, Product, CartItem
 import csv
 import datetime
 import pytz
@@ -21,8 +21,41 @@ def nutrient(request):
     return render(request, "fitness/nutrient.html")
 
 def supplement(request):
-    return render(request, "fitness/supplement.html")
+    products = Product.objects.all()
+    return render(request, 'fitness/supplement.html', {'products': products})
 
+def cart(request):
+    cart_items = CartItem.objects.all()
+    total_price = sum(item.product.price * item.quantity for item in cart_items)
+    return render(request, 'fitness/cart.html', {'cart_items': cart_items, 'total_price': total_price})
+
+def add_to_cart(request, product_id):
+    product = Product.objects.get(id=product_id)
+    cart_item, created = CartItem.objects.get_or_create(product=product)
+    if not created:
+        cart_item.quantity += 1
+        cart_item.save()
+    return redirect('supplement')
+
+def remove_from_cart(request, cart_item_id):
+    try:
+        cart_item = get_object_or_404(CartItem, id=cart_item_id)
+        if cart_item.quantity > 1:
+            cart_item.quantity -= 1
+            cart_item.save()
+        else:
+            cart_item.delete()
+    except CartItem.DoesNotExist:
+        pass  
+    return redirect('cart')
+
+def remove_all(request, cart_item_id):
+    try:
+        cart_item = get_object_or_404(CartItem, id=cart_item_id)
+        cart_item.delete()
+    except CartItem.DoesNotExist:
+        pass
+    return redirect('cart')
 def bodyfat(request):
     return render(request, "fitness/bodyfat.html")
 

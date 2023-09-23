@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.conf.urls.static import static
+from django.conf import settings
 from django.urls import path
 from fitness import views
 
@@ -25,6 +27,10 @@ urlpatterns = [
     path('workoutlogging', views.workoutlogging, name='workoutlogging'),
     path('nutrient',views.nutrient, name='nutrient'),
     path('supplement',views.supplement, name='supplement'),
+    path('cart', views.cart, name='cart'),
+    path('add_to_cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
+    path('remove_from_cart/<int:cart_item_id>/', views.remove_from_cart, name='remove_from_cart'),
+    path('remove_all/<int:cart_item_id>/', views.remove_all, name='remove_all'),
     path('bodyfat',views.bodyfat, name='bodyfat'),
     path('tips',views.tips, name='tips'),
     path('mental',views.mental, name='mental'),
@@ -40,3 +46,5 @@ urlpatterns = [
     path('login', auth_views.LoginView.as_view(), name='login'),
     path('logout', auth_views.LogoutView.as_view(), name='logout'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
